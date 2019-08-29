@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://defenit.github.io/"/>
-  <updated>2019-08-29T06:47:13.109Z</updated>
+  <updated>2019-08-29T06:49:39.308Z</updated>
   <id>http://defenit.github.io/</id>
   
   <author>
@@ -21,12 +21,24 @@
     <link href="http://defenit.github.io/2019/08/29/categoriestest/"/>
     <id>http://defenit.github.io/2019/08/29/categoriestest/</id>
     <published>2019-08-29T06:47:13.000Z</published>
-    <updated>2019-08-29T06:47:13.109Z</updated>
+    <updated>2019-08-29T06:49:39.308Z</updated>
+    
+    <content type="html"><![CDATA[<p>또잉 또잉 나는 노예다</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;또잉 또잉 나는 노예다&lt;/p&gt;
+
+      
+    
     </summary>
     
+      <category term="종허니띠드버거" scheme="http://defenit.github.io/categories/%EC%A2%85%ED%97%88%EB%8B%88%EB%9D%A0%EB%93%9C%EB%B2%84%EA%B1%B0/"/>
+    
+    
+      <category term="test" scheme="http://defenit.github.io/tags/test/"/>
     
   </entry>
   
