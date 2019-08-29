@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Defenit 블로그</title>
+    <link>http://defenit.github.io/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Thu, 29 Aug 2019 08:54:17 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>test</title>
+      <link>http://defenit.github.io/2019/08/29/test/</link>
+      <guid>http://defenit.github.io/2019/08/29/test/</guid>
+      <pubDate>Thu, 29 Aug 2019 08:52:47 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"hello world"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/29/test/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
