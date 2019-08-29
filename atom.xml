@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://defenit.github.io/"/>
-  <updated>2019-08-29T08:37:30.679Z</updated>
+  <updated>2019-08-29T08:42:43.630Z</updated>
   <id>http://defenit.github.io/</id>
   
   <author>
@@ -21,22 +21,14 @@
     <link href="http://defenit.github.io/2019/08/29/test/"/>
     <id>http://defenit.github.io/2019/08/29/test/</id>
     <published>2019-08-29T08:34:07.000Z</published>
-    <updated>2019-08-29T08:37:30.679Z</updated>
+    <updated>2019-08-29T08:42:43.630Z</updated>
     
     <summary type="html">
     
     </summary>
     
-      <category term="test" scheme="http://defenit.github.io/categories/test/"/>
     
-      <category term="2" scheme="http://defenit.github.io/categories/test/2/"/>
-    
-    
-      <category term="love" scheme="http://defenit.github.io/tags/love/"/>
-    
-      <category term="ad" scheme="http://defenit.github.io/tags/ad/"/>
-    
-      <category term="adfff" scheme="http://defenit.github.io/tags/adfff/"/>
+      <category term="test" scheme="http://defenit.github.io/tags/test/"/>
     
   </entry>
   
