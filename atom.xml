@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://defenit.github.io/"/>
-  <updated>2019-08-29T08:43:39.115Z</updated>
+  <updated>2019-08-29T08:52:47.131Z</updated>
   <id>http://defenit.github.io/</id>
   
   <author>
@@ -20,43 +20,13 @@
     <title>test</title>
     <link href="http://defenit.github.io/2019/08/29/test/"/>
     <id>http://defenit.github.io/2019/08/29/test/</id>
-    <published>2019-08-29T08:34:07.000Z</published>
-    <updated>2019-08-29T08:43:39.115Z</updated>
+    <published>2019-08-29T08:52:47.000Z</published>
+    <updated>2019-08-29T08:52:47.131Z</updated>
     
     <summary type="html">
     
     </summary>
     
-      <category term="카테고리요" scheme="http://defenit.github.io/categories/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%EC%9A%94/"/>
-    
-    
-      <category term="태그요" scheme="http://defenit.github.io/tags/%ED%83%9C%EA%B7%B8%EC%9A%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>꺄아아아악</title>
-    <link href="http://defenit.github.io/2019/08/29/categoriestest/"/>
-    <id>http://defenit.github.io/2019/08/29/categoriestest/</id>
-    <published>2019-08-29T06:47:13.000Z</published>
-    <updated>2019-08-29T08:47:35.199Z</updated>
-    
-    <content type="html"><![CDATA[<p>또잉 또잉 나는 노예다</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;또잉 또잉 나는 노예다&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="히히" scheme="http://defenit.github.io/categories/%ED%9E%88%ED%9E%88/"/>
-    
-    
-      <category term="이것은 태그" scheme="http://defenit.github.io/tags/%EC%9D%B4%EA%B2%83%EC%9D%80-%ED%83%9C%EA%B7%B8/"/>
     
   </entry>
   
