@@ -11,10 +11,16 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 카테고리요 </category>
+          
+      </categories>
+      
       
         <tags>
             
-            <tag> test </tag>
+            <tag> 태그요 </tag>
             
         </tags>
       
