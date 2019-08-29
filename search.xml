@@ -11,10 +11,18 @@
         <content type="html"><![CDATA[<p>또잉 또잉 나는 노예다</p>]]></content>
       
       
+      <categories>
+          
+          <category> 종허니띠드버거 </category>
+          
+          <category> test </category>
+          
+      </categories>
+      
       
         <tags>
             
-            <tag> test </tag>
+            <tag> 이것은 태그 </tag>
             
         </tags>
       
