@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Defenit 블로그</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://defenit.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>종현종현테스트</name>
     
   </author>
   
