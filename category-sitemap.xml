@@ -8,19 +8,10 @@
     </url>
 
     <url>
-        <loc>http://defenit.github.io/2019/08/29/doc/</loc>
+        <loc>http://defenit.github.io/categories/Research/</loc>
         <lastmod>2019-08-29T10:05:45.168Z</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/29/test/</loc>
-        <lastmod>2019-08-29T08:54:17.429Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
+        <priority>0.2</priority>
     </url>
 
 </urlset>
