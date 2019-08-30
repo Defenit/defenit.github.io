@@ -167,6 +167,7 @@ img.avatar-animation:hover {
   height: 40px;
   visibility: hidden;
   content: ' ';
+  <hr> ;
 }
 
 .sidebar_archives-link:hover {
