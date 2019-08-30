@@ -8,8 +8,28 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 30 Aug 2019 09:23:45 GMT</pubDate>
+    <pubDate>Fri, 30 Aug 2019 12:47:02 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>테스트요</title>
+      <link>http://defenit.github.io/2019/08/30/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%94/</link>
+      <guid>http://defenit.github.io/2019/08/30/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%94/</guid>
+      <pubDate>Fri, 30 Aug 2019 12:46:38 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;dd&lt;/p&gt;
+
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>dd</p>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%94/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>뜨아아아아아아아아악</title>
