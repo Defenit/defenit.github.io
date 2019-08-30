@@ -4,22 +4,17 @@
 
     <sitemap>
         <loc>http://defenit.github.io/post-sitemap.xml</loc>
-        <lastmod>2019-08-30T15:13:33.090Z</lastmod>
+        <lastmod>2019-08-30T15:15:02.364Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://defenit.github.io/page-sitemap.xml</loc>
-        <lastmod>2019-08-30T14:05:16.570Z</lastmod>
+        <lastmod>2019-08-30T14:32:25.302Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://defenit.github.io/category-sitemap.xml</loc>
-        <lastmod>2019-08-30T15:12:32.772Z</lastmod>
-    </sitemap>
-
-    <sitemap>
-        <loc>http://defenit.github.io/tag-sitemap.xml</loc>
-        
+        <lastmod>2019-08-30T15:13:18.701Z</lastmod>
     </sitemap>
 
 </sitemapindex>

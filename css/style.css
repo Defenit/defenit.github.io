@@ -167,7 +167,6 @@ img.avatar-animation:hover {
   height: 40px;
   visibility: hidden;
   content: ' ';
-  <hr> ;
 }
 
 .sidebar_archives-link:hover {
@@ -194,7 +193,6 @@ img.avatar-animation:hover {
   position: absolute;
   right: 40px;
   top: 8px;
-  <hr>
 }
 
 /* Article Categories Style */
