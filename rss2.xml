@@ -8,8 +8,20 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 29 Aug 2019 10:05:45 GMT</pubDate>
+    <pubDate>Fri, 30 Aug 2019 07:43:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>test</title>
+      <link>http://defenit.github.io/2019/08/30/test/</link>
+      <guid>http://defenit.github.io/2019/08/30/test/</guid>
+      <pubDate>Fri, 30 Aug 2019 07:43:05 GMT</pubDate>
+      <description>
+      
+      </description>
+      
+      <comments>http://defenit.github.io/2019/08/30/test/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>준원군의 몸을 호시탐탐</title>

@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>test</title>
+      <link href="/2019/08/30/test/"/>
+      <url>/2019/08/30/test/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>준원군의 몸을 호시탐탐</title>
       <link href="/2019/08/29/doc/"/>
       <url>/2019/08/29/doc/</url>
@@ -14,6 +27,8 @@
       <categories>
           
           <category> Research </category>
+          
+          <category> Kernel </category>
           
       </categories>
       
