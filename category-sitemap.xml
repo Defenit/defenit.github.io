@@ -8,15 +8,8 @@
     </url>
 
     <url>
-        <loc>http://defenit.github.io/categories/Research/Kernel/</loc>
-        <lastmod>2019-08-30T14:59:37.796Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/categories/Research/</loc>
-        <lastmod>2019-08-30T14:59:37.796Z</lastmod>
+        <loc>http://defenit.github.io/categories/%EC%A3%BC%EC%B9%B4%ED%85%8C/</loc>
+        <lastmod>2019-08-30T15:01:30.578Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -31,6 +24,13 @@
     <url>
         <loc>http://defenit.github.io/categories/test/</loc>
         <lastmod>2019-08-30T09:24:54.805Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/categories/Research/</loc>
+        <lastmod>2019-08-30T08:24:32.284Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
