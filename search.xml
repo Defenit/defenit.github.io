@@ -4,44 +4,6 @@
   
     
     <entry>
-      <title>테스트요</title>
-      <link href="/2019/08/30/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%94/"/>
-      <url>/2019/08/30/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%94/</url>
-      
-        <content type="html"><![CDATA[<p>G<br>dd<br>테스틑삼ㄴ럼런앰럼러야ㅐ렁랴어랴얼멀야렁량아가나다라마<br>가나다라마바사앚<br>dsafdfasfdfdjfdfakfdljasflkajflasjflsadjfaslkfjadslkfjaklfjdaslfjakfa<br>afjsadlkfjadlfajfldkajflajdfljdlfkdjflakjdflsakfjdkalfjdalfjakfdjaf<br>adfkjaslfjdslafjsalkdfjaslkfkkkkkkkkk<br>아아아테스트차</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> smooth </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>뜨아아아아아아아아악</title>
-      <link href="/2019/08/30/simple/"/>
-      <url>/2019/08/30/simple/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">printf</span> (<span class="string">"Hello world\n"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./test'</span>)</span><br><span class="line">p = <span class="string">''</span></span><br><span class="line">p = <span class="string">'\x90'</span>*<span class="number">30</span></span><br><span class="line">p += p32(test)</span><br><span class="line">r.interactive();</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> test </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>연구글</title>
       <link href="/2019/08/30/%EC%97%B0%EA%B5%AC%EA%B8%80/"/>
       <url>/2019/08/30/%EC%97%B0%EA%B5%AC%EA%B8%80/</url>
@@ -63,19 +25,6 @@
             <tag> 크아아앙 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>test</title>
-      <link href="/2019/08/30/test/"/>
-      <url>/2019/08/30/test/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     

@@ -8,46 +8,8 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 30 Aug 2019 13:36:40 GMT</pubDate>
+    <pubDate>Fri, 30 Aug 2019 15:03:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>테스트요</title>
-      <link>http://defenit.github.io/2019/08/30/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%94/</link>
-      <guid>http://defenit.github.io/2019/08/30/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%94/</guid>
-      <pubDate>Fri, 30 Aug 2019 12:46:38 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;G&lt;br&gt;dd&lt;br&gt;테스틑삼ㄴ럼런앰럼러야ㅐ렁랴어랴얼멀야렁량아가나다라마&lt;br&gt;가나다라마바사앚&lt;br&gt;dsafdfasfdfdjfdfakfdljasflkajflasjflsadjfaslkfjadslkfjaklfjdaslfjakfa&lt;br&gt;afjsadlkfj
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>G<br>dd<br>테스틑삼ㄴ럼런앰럼러야ㅐ렁랴어랴얼멀야렁량아가나다라마<br>가나다라마바사앚<br>dsafdfasfdfdjfdfakfdljasflkajflasjflsadjfaslkfjadslkfjaklfjdaslfjakfa<br>afjsadlkfjadlfajfldkajflajdfljdlfkdjflakjdflsakfjdkalfjdalfjakfdjaf<br>adfkjaslfjdslafjsalkdfjaslkfkkkkkkkkk<br>아아아테스트차</p>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/30/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%94/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>뜨아아아아아아아아악</title>
-      <link>http://defenit.github.io/2019/08/30/simple/</link>
-      <guid>http://defenit.github.io/2019/08/30/simple/</guid>
-      <pubDate>Fri, 30 Aug 2019 09:03:02 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;li
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">printf</span> (<span class="string">"Hello world\n"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./test'</span>)</span><br><span class="line">p = <span class="string">''</span></span><br><span class="line">p = <span class="string">'\x90'</span>*<span class="number">30</span></span><br><span class="line">p += p32(test)</span><br><span class="line">r.interactive();</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/30/simple/#disqus_thread</comments>
-    </item>
     
     <item>
       <title>연구글</title>
@@ -67,18 +29,6 @@
       <content:encoded><![CDATA[<p><img src="https://user-images.githubusercontent.com/16969364/64005264-0053fa00-cb4b-11e9-8aee-59c808ebfb37.png" alt="profile"></p>]]></content:encoded>
       
       <comments>http://defenit.github.io/2019/08/30/%EC%97%B0%EA%B5%AC%EA%B8%80/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>http://defenit.github.io/2019/08/30/test/</link>
-      <guid>http://defenit.github.io/2019/08/30/test/</guid>
-      <pubDate>Fri, 30 Aug 2019 07:43:05 GMT</pubDate>
-      <description>
-      
-      </description>
-      
-      <comments>http://defenit.github.io/2019/08/30/test/#disqus_thread</comments>
     </item>
     
     <item>
