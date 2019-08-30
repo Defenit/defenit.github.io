@@ -8,11 +8,11 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 30 Aug 2019 09:05:02 GMT</pubDate>
+    <pubDate>Fri, 30 Aug 2019 09:23:45 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>simple</title>
+      <title>뜨아아아아아아아아악</title>
       <link>http://defenit.github.io/2019/08/30/simple/</link>
       <guid>http://defenit.github.io/2019/08/30/simple/</guid>
       <pubDate>Fri, 30 Aug 2019 09:03:02 GMT</pubDate>
@@ -25,7 +25,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">printf</span> (<span class="string">"Hello world\n"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      <content:encoded><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">printf</span> (<span class="string">"Hello world\n"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./test'</span>)</span><br><span class="line">p = <span class="string">''</span></span><br><span class="line">p = <span class="string">'\x90'</span>*<span class="number">30</span></span><br><span class="line">p += p32(test)</span><br><span class="line">r.interactive();</span><br></pre></td></tr></table></figure>]]></content:encoded>
       
       <comments>http://defenit.github.io/2019/08/30/simple/#disqus_thread</comments>
     </item>
