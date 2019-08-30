@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 30 Aug 2019 15:38:33 GMT</pubDate>
+    <pubDate>Fri, 30 Aug 2019 15:43:03 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -21,12 +21,12 @@
         
         
           &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/16969364/64005264-0053fa00-cb4b-11e9-8aee-59c808ebfb37.png&quot; alt=&quot;profile&quot;&gt;&lt;/p&gt;
-
+&lt;pre&gt;&lt;
         
       
       </description>
       
-      <content:encoded><![CDATA[<p><img src="https://user-images.githubusercontent.com/16969364/64005264-0053fa00-cb4b-11e9-8aee-59c808ebfb37.png" alt="profile"></p>]]></content:encoded>
+      <content:encoded><![CDATA[<p><img src="https://user-images.githubusercontent.com/16969364/64005264-0053fa00-cb4b-11e9-8aee-59c808ebfb37.png" alt="profile"></p><pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
       
       <comments>http://defenit.github.io/2019/08/30/%EC%97%B0%EA%B5%AC%EA%B8%80/#disqus_thread</comments>
     </item>
