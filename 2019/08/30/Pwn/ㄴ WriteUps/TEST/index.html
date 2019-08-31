@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>테스트용 | Defenit 블로그</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/rss2.xml" title="Defenit 블로그">
+  <meta name="description" content="#include &amp;lt;stdio.h&amp;gt; int main(void) { printf(&quot;Hello World\n&quot;); return 0; }">
+<meta name="keywords" content="Defenit, Hacking, Securify, Exploit, Kernel, Research">
+<meta property="og:type" content="article">
+<meta property="og:title" content="테스트용">
+<meta property="og:url" content="http://defenit.github.io/2019/08/30/Pwn/ㄴ WriteUps/TEST/index.html">
+<meta property="og:site_name" content="Defenit 블로그">
+<meta property="og:description" content="#include &amp;lt;stdio.h&amp;gt; int main(void) { printf(&quot;Hello World\n&quot;); return 0; }">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-31T16:54:08.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="테스트용">
+<meta name="twitter:description" content="#include &amp;lt;stdio.h&amp;gt; int main(void) { printf(&quot;Hello World\n&quot;); return 0; }">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content>
+  <meta name="keywords" content>
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Defenit 블로그">
+  <meta name="msapplication-starturl" content="http://defenit.github.io/2019/08/30/Pwn/ㄴ WriteUps/TEST/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Defenit 블로그">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Fri Aug 30 2019 08:20:08 GMT+0000">
+    <meta property="article:modified_time" content="Sat Aug 31 2019 16:54:08 GMT+0000">
+  
+
+  
+    <link rel="canonical" href="http://defenit.github.io/2019/08/30/Pwn/ㄴ WriteUps/TEST/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">Defenit 블로그</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '검색'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/rss2.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="입력">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Defenit</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i></div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">카테고리</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense"><hr>
+	   <h3>
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/Crypto/">Crypto<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Crypto/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Crypto/ㄴ-WriteUps/">ㄴ WriteUps<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Forensic/">Forensic<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Forensic/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Forensic/ㄴ-WriteUps/">ㄴ WriteUps<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/">Pwn<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/ㄴ-Technology/">ㄴ Technology<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/ㄴ-WriteUps/">ㄴ WriteUps<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Rev/">Rev<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Rev/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Rev/ㄴ-WriteUps/">ㄴ WriteUps<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/">Web<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/ㄴ-Technology/">ㄴ Technology<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/ㄴ-WriteUps/">ㄴ WriteUps<span class="mdui-ripple sidebar_archives-count">1</span></a></h3> <hr>
+		
+        
+      </div>
+    </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">팀정보</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="https://blog.naver.com/yjw_sz/221631615816" class="mdui-list-item mdui-ripple">Apply</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://ctf.j0n9hyun.xyz/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Wargame</a>
+        
+          <a href="https://www.facebook.com/Defenit-260502217757766/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Facebook</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="https://user-images.githubusercontent.com/16969364/64005264-0053fa00-cb4b-11e9-8aee-59c808ebfb37.png" style="max-height: 340px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">테스트용</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-08-30 / <i class="iconfont">&#xe601;</i> Defenit</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACW0lEQVR42u3aS27DMAwFwNz/0ukBiiiPpC0LwXgVNB9zvJDUR77eP3298PDw8PDw8PDwDuO94uv/5+d/+fRurzY8PDy8nbwvS+3yxuvfWVM/lTiqDQ8PD28jb70Z9L6VbDPzu+Dh4eGdzMuPwuvtIVno8fDw8H6Plx+vk0U/oeLh4eGdxrtqsZ7gE/aNWQseHh5ezKs2wHa+fqC/h4eHh7fklUeaYnbvkxcPXeHh4eHdwOsFAXnLP2mMVTeqC/5jwMPDwxvwkvggDymqYW41kkhqw8PDw9vDqxaaPI78N9ebRzl0xsPDw3uIN2lN5Ufh6phC9Fjx8PDwtvB6JSblTmKO6mEaDw8P7yledTmesJsDqfOsBQ8PD2/Am0QAeXGTodhq0IyHh4e3h1dd7qtLdnVQYNSWw8PDw9vC64W2yWbQa31N2nJ4eHh4O3nJol+4TTJaetEDxcPDwzuH1xvxr47pT8b68fDw8Pbz8lAgCW2ToqtjBO/ihYeHh3c3Lx946jWrkiC4N3zQbIDh4eHhXcpLSu81saqApAY8PDy8p3h56dXgdbKd9MZY8fDw8PbzqrBePFH9heqWg4eHh3c3774DcfWaRMB4eHh4O3m94LUXzubfTQ7Zhf4eHh4e3qW83sKdvM6bWwkjHybAw8PD28OrLta9skbhLB4eHt6RvHwzmAxdVcPc5AHh4eHhncyrxrvVgYP8QdyyMeDh4eFt5PUGtr4MnhbrwcPDw9vPm4cRvSGtyfaDh4eH9xRvPhSVjBHkgcJkk8DDw8O7m/d7Fx4eHh4eHh4e3gHXHzdFJjlDU9sVAAAAAElFTkSuQmCC">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://defenit.github.io/2019/08/30/Pwn/ㄴ WriteUps/TEST/" target="_blank" class="mdui-ripple">페이스북 공유</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span>
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{
+<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);
+<span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+      <blockquote class="mdui-m-t-5">
+        
+      </blockquote>
+      
+    </div>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2019/08/31/Web/ㄴ Research/code/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;다음 글
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/08/30/Forensic/ㄴ Research/TEST/">
+        이전 글&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2019 Defenit<br>
+    
+  </div>
+</footer>
+
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

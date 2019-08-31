@@ -8,13 +8,13 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 31 Aug 2019 16:34:42 GMT</pubDate>
+    <pubDate>Sat, 31 Aug 2019 16:42:41 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>테스트용</title>
-      <link>http://defenit.github.io/2019/08/31/code/</link>
-      <guid>http://defenit.github.io/2019/08/31/code/</guid>
+      <link>http://defenit.github.io/2019/08/31/Web/%E3%84%B4%20Research/code/</link>
+      <guid>http://defenit.github.io/2019/08/31/Web/%E3%84%B4%20Research/code/</guid>
       <pubDate>Sat, 31 Aug 2019 02:38:17 GMT</pubDate>
       <description>
       
@@ -27,13 +27,13 @@
       
       <content:encoded><![CDATA[<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">r = process(<span class="string">'binary'</span>)</span><br><span class="line"><span class="comment">#r = remote('address', port)</span></span><br><span class="line">e = ELF(<span class="string">'binary'</span>)</span><br><span class="line">libc = e.libc</span><br><span class="line"><span class="comment">#context.terminal=['tmux', 'splitw', '-h']</span></span><br><span class="line"><span class="comment">#gdb.attach(r)</span></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sa = <span class="keyword">lambda</span> a, b: r.sendafter(a, b)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line"><span class="comment">#binsh_offset = libc.search('/bin/sh').next()</span></span><br><span class="line"><span class="comment">#system_offset = libc.symbols['system']</span></span><br><span class="line"><span class="comment">#write_got = e.got['write']</span></span><br><span class="line"><span class="comment">#read_got = e.got['read']</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">''</span></span><br><span class="line">p += <span class="string">'\x90'</span></span><br></pre></td></tr></table></figure><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abc</span><span class="params">(N)</span>:</span></span><br><span class="line">r = N % <span class="number">2</span></span><br><span class="line">print(<span class="string">'*'</span>, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">if</span> N &gt;= <span class="number">2</span>:</span><br><span class="line">abc(N // <span class="number">2</span>)</span><br><span class="line">print(<span class="string">"%d"</span> % r, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">abc(<span class="number">78</span>)</span><br></pre></td></tr></table></figure><pre><code class="py"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(s, last)</span>:</span>        <span class="keyword">if</span> last &lt; <span class="number">0</span>:                <span class="keyword">return</span> <span class="number">0</span>            <span class="keyword">if</span> s[<span class="number">-1</span>] == <span class="string">'0'</span>:                <span class="keyword">return</span> <span class="number">2</span> * test(s, last<span class="number">-1</span>)            <span class="keyword">return</span> <span class="number">1</span> + <span class="number">2</span> * test(s, last<span class="number">-1</span>)        print(test(<span class="string">'110100111'</span>, <span class="number">4</span>))</code></pre>]]></content:encoded>
       
-      <comments>http://defenit.github.io/2019/08/31/code/#disqus_thread</comments>
+      <comments>http://defenit.github.io/2019/08/31/Web/%E3%84%B4%20Research/code/#disqus_thread</comments>
     </item>
     
     <item>
       <title>테스트용</title>
-      <link>http://defenit.github.io/2019/08/30/TEST/</link>
-      <guid>http://defenit.github.io/2019/08/30/TEST/</guid>
+      <link>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</guid>
       <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
       <description>
       
@@ -47,7 +47,207 @@
       
       <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
       
-      <comments>http://defenit.github.io/2019/08/30/TEST/#disqus_thread</comments>
+      <comments>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20WriteUps/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20WriteUps/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20Research/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20Research/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20Research/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20Research/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20Research/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20Research/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20Technology/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20Technology/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20Technology/TEST/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/</guid>
+      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
     </item>
     
   </channel>
