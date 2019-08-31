@@ -8,80 +8,8 @@
     </url>
 
     <url>
-        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</loc>
-        <lastmod>2019-08-31T16:54:08.971Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20WriteUps/TEST/</loc>
-        <lastmod>2019-08-31T16:50:01.283Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20Research/TEST/</loc>
-        <lastmod>2019-08-31T16:49:53.330Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</loc>
-        <lastmod>2019-08-31T16:48:56.330Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</loc>
-        <lastmod>2019-08-31T16:48:49.240Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/</loc>
-        <lastmod>2019-08-31T16:47:21.840Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20Research/TEST/</loc>
-        <lastmod>2019-08-31T16:47:17.093Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/</loc>
-        <lastmod>2019-08-31T16:46:21.407Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</loc>
-        <lastmod>2019-08-31T16:45:50.417Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/</loc>
-        <lastmod>2019-08-31T16:44:18.493Z</lastmod>
+        <lastmod>2019-08-31T17:02:03.254Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +17,7 @@
 
     <url>
         <loc>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20Technology/TEST/</loc>
-        <lastmod>2019-08-31T16:44:06.707Z</lastmod>
+        <lastmod>2019-08-31T17:01:56.434Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -97,7 +25,79 @@
 
     <url>
         <loc>http://defenit.github.io/2019/08/31/Web/%E3%84%B4%20Research/code/</loc>
-        <lastmod>2019-08-31T16:42:41.260Z</lastmod>
+        <lastmod>2019-08-31T17:01:49.123Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/</loc>
+        <lastmod>2019-08-31T17:01:39.142Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20Research/TEST/</loc>
+        <lastmod>2019-08-31T17:01:30.693Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</loc>
+        <lastmod>2019-08-31T17:01:01.472Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/</loc>
+        <lastmod>2019-08-31T17:00:54.025Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</loc>
+        <lastmod>2019-08-31T17:00:46.247Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</loc>
+        <lastmod>2019-08-31T17:00:37.856Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</loc>
+        <lastmod>2019-08-31T17:00:30.677Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20WriteUps/TEST/</loc>
+        <lastmod>2019-08-31T17:00:22.138Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Crypto/%E3%84%B4%20Research/TEST/</loc>
+        <lastmod>2019-08-31T17:00:14.597Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
