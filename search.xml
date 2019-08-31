@@ -26,21 +26,27 @@
       
       <categories>
           
-          <category> Web Research </category>
+          <category> Web </category>
           
-          <category> Web Technology </category>
+          <category> ㄴ Research </category>
           
-          <category> Web WriteUps </category>
+          <category> ㄴ Technology </category>
           
-          <category> Pwn Research </category>
+          <category> ㄴ WriteUps </category>
           
-          <category> Pwn Technology </category>
+          <category> Pwn </category>
           
-          <category> Pwn WriteUps </category>
+          <category> ㄴ Research </category>
           
-          <category> Rev Research </category>
+          <category> ㄴ Technology </category>
           
-          <category> Rev WriteUps </category>
+          <category> ㄴ WriteUps </category>
+          
+          <category> Rev </category>
+          
+          <category> ㄴ  Research </category>
+          
+          <category> ㄴ WriteUps </category>
           
       </categories>
       
