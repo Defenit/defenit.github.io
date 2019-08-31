@@ -8,11 +8,11 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 31 Aug 2019 03:35:19 GMT</pubDate>
+    <pubDate>Sat, 31 Aug 2019 14:39:50 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>aaa</title>
+      <title>테스트용</title>
       <link>http://defenit.github.io/2019/08/31/aaa/</link>
       <guid>http://defenit.github.io/2019/08/31/aaa/</guid>
       <pubDate>Sat, 31 Aug 2019 02:38:17 GMT</pubDate>
@@ -31,23 +31,23 @@
     </item>
     
     <item>
-      <title>카테고리</title>
-      <link>http://defenit.github.io/2019/08/30/%EC%97%B0%EA%B5%AC%EA%B8%80/</link>
-      <guid>http://defenit.github.io/2019/08/30/%EC%97%B0%EA%B5%AC%EA%B8%80/</guid>
+      <title>테스트용</title>
+      <link>http://defenit.github.io/2019/08/30/TEST/</link>
+      <guid>http://defenit.github.io/2019/08/30/TEST/</guid>
       <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
       <description>
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/16969364/64005264-0053fa00-cb4b-11e9-8aee-59c808ebfb37.png&quot; alt=&quot;profile&quot;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;
+          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;
         
       
       </description>
       
-      <content:encoded><![CDATA[<p><img src="https://user-images.githubusercontent.com/16969364/64005264-0053fa00-cb4b-11e9-8aee-59c808ebfb37.png" alt="profile"></p><pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
+      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content:encoded>
       
-      <comments>http://defenit.github.io/2019/08/30/%EC%97%B0%EA%B5%AC%EA%B8%80/#disqus_thread</comments>
+      <comments>http://defenit.github.io/2019/08/30/TEST/#disqus_thread</comments>
     </item>
     
     <item>
