@@ -12,18 +12,18 @@
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/rss2.xml" title="Defenit 블로그">
-  <meta name="description" content="1234567891011121314151617181920from pwn import *r = process(&apos;binary&apos;)#r = remote(&apos;address&apos;, port)e = ELF(&apos;binary&apos;)libc = e.libc#context.terminal=[&apos;tmux&apos;, &apos;splitw&apos;, &apos;-h&apos;]#gdb.attach(r)ru = lambda a: r.">
+  <meta name="description" content="123456789def abc(N):		r = N % 2			print(&apos;*&apos;, end=&apos; &apos;)			if N &amp;gt;= 2:				abc(N // 2)			print(&quot;%d&quot; % r, end=&apos; &apos;)			return		abc(78)  def test(s, last):         if last &amp;lt; 0:                 return 0">
 <meta name="keywords" content="Defenit, Hacking, Securify, Exploit, Kernel, Research">
 <meta property="og:type" content="article">
 <meta property="og:title" content="테스트용">
 <meta property="og:url" content="http://defenit.github.io/2019/08/31/Web/ㄴ Research/code/index.html">
 <meta property="og:site_name" content="Defenit 블로그">
-<meta property="og:description" content="1234567891011121314151617181920from pwn import *r = process(&apos;binary&apos;)#r = remote(&apos;address&apos;, port)e = ELF(&apos;binary&apos;)libc = e.libc#context.terminal=[&apos;tmux&apos;, &apos;splitw&apos;, &apos;-h&apos;]#gdb.attach(r)ru = lambda a: r.">
+<meta property="og:description" content="123456789def abc(N):		r = N % 2			print(&apos;*&apos;, end=&apos; &apos;)			if N &amp;gt;= 2:				abc(N // 2)			print(&quot;%d&quot; % r, end=&apos; &apos;)			return		abc(78)  def test(s, last):         if last &amp;lt; 0:                 return 0">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-31T17:01:49.123Z">
+<meta property="og:updated_time" content="2019-09-02T09:22:18.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="테스트용">
-<meta name="twitter:description" content="1234567891011121314151617181920from pwn import *r = process(&apos;binary&apos;)#r = remote(&apos;address&apos;, port)e = ELF(&apos;binary&apos;)libc = e.libc#context.terminal=[&apos;tmux&apos;, &apos;splitw&apos;, &apos;-h&apos;]#gdb.attach(r)ru = lambda a: r.">
+<meta name="twitter:description" content="123456789def abc(N):		r = N % 2			print(&apos;*&apos;, end=&apos; &apos;)			if N &amp;gt;= 2:				abc(N // 2)			print(&quot;%d&quot; % r, end=&apos; &apos;)			return		abc(78)  def test(s, last):         if last &amp;lt; 0:                 return 0">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
@@ -41,7 +41,7 @@
 
   
     <meta property="article:published_time" content="Sat Aug 31 2019 02:38:17 GMT+0000">
-    <meta property="article:modified_time" content="Sat Aug 31 2019 17:01:49 GMT+0000">
+    <meta property="article:modified_time" content="Mon Sep 02 2019 09:22:18 GMT+0000">
   
 
   
@@ -143,7 +143,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="https://ctf.j0n9hyun.xyz/files/25b3f1eb21f985799e862a9efd058cab/notfound.PNG" style="max-height: 340px;">
+      <img src="/images/random/cover.png" style="max-height: 340px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">테스트용</div>
@@ -163,9 +163,7 @@
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">r = process(<span class="string">'binary'</span>)</span><br><span class="line"><span class="comment">#r = remote('address', port)</span></span><br><span class="line">e = ELF(<span class="string">'binary'</span>)</span><br><span class="line">libc = e.libc</span><br><span class="line"><span class="comment">#context.terminal=['tmux', 'splitw', '-h']</span></span><br><span class="line"><span class="comment">#gdb.attach(r)</span></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sa = <span class="keyword">lambda</span> a, b: r.sendafter(a, b)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line"><span class="comment">#binsh_offset = libc.search('/bin/sh').next()</span></span><br><span class="line"><span class="comment">#system_offset = libc.symbols['system']</span></span><br><span class="line"><span class="comment">#write_got = e.got['write']</span></span><br><span class="line"><span class="comment">#read_got = e.got['read']</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">''</span></span><br><span class="line">p += <span class="string">'\x90'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abc</span><span class="params">(N)</span>:</span></span><br><span class="line">		r = N % <span class="number">2</span></span><br><span class="line">			print(<span class="string">'*'</span>, end=<span class="string">' '</span>)</span><br><span class="line">			<span class="keyword">if</span> N &gt;= <span class="number">2</span>:</span><br><span class="line">				abc(N // <span class="number">2</span>)</span><br><span class="line">			print(<span class="string">"%d"</span> % r, end=<span class="string">' '</span>)</span><br><span class="line">			<span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">		abc(<span class="number">78</span>)</span><br></pre></td></tr></table></figure>
+      <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abc</span><span class="params">(N)</span>:</span></span><br><span class="line">		r = N % <span class="number">2</span></span><br><span class="line">			print(<span class="string">'*'</span>, end=<span class="string">' '</span>)</span><br><span class="line">			<span class="keyword">if</span> N &gt;= <span class="number">2</span>:</span><br><span class="line">				abc(N // <span class="number">2</span>)</span><br><span class="line">			print(<span class="string">"%d"</span> % r, end=<span class="string">' '</span>)</span><br><span class="line">			<span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">		abc(<span class="number">78</span>)</span><br></pre></td></tr></table></figure>
 
 <pre><code class="py"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(s, last)</span>:</span>
         <span class="keyword">if</span> last &lt; <span class="number">0</span>:
