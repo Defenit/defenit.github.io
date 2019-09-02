@@ -31,7 +31,7 @@
     </item>
     
     <item>
-      <title>테스트용</title>
+      <title></title>
       <link>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</link>
       <guid>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</guid>
       <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
@@ -51,7 +51,7 @@
     </item>
     
     <item>
-      <title>테스트용</title>
+      <title></title>
       <link>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</link>
       <guid>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</guid>
       <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
@@ -59,19 +59,18 @@
       
         
         
-          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/spoiler.css&quot; type=&quot;text/css&quot;&gt;&lt;script src=&quot;/js/spoiler.js&quot; type=&quot;text/javascript&quot; async&gt;&lt;/script&gt;
         
       
       </description>
       
-      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
       
       <comments>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>테스트용</title>
+      <title></title>
       <link>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</link>
       <guid>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</guid>
       <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
@@ -79,19 +78,18 @@
       
         
         
-          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/spoiler.css&quot; type=&quot;text/css&quot;&gt;&lt;script src=&quot;/js/spoiler.js&quot; type=&quot;text/javascript&quot; async&gt;&lt;/script&gt;
         
       
       </description>
       
-      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
       
       <comments>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>테스트용</title>
+      <title></title>
       <link>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/</link>
       <guid>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/</guid>
       <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
@@ -99,19 +97,18 @@
       
         
         
-          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/spoiler.css&quot; type=&quot;text/css&quot;&gt;&lt;script src=&quot;/js/spoiler.js&quot; type=&quot;text/javascript&quot; async&gt;&lt;/script&gt;
         
       
       </description>
       
-      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
       
       <comments>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>테스트용</title>
+      <title></title>
       <link>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</link>
       <guid>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</guid>
       <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
@@ -119,13 +116,12 @@
       
         
         
-          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/spoiler.css&quot; type=&quot;text/css&quot;&gt;&lt;script src=&quot;/js/spoiler.js&quot; type=&quot;text/javascript&quot; async&gt;&lt;/script&gt;
         
       
       </description>
       
-      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
       
       <comments>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
     </item>
