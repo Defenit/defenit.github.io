@@ -8,7 +8,7 @@
       <link href="/2019/08/31/Web/%E3%84%B4%20Research/code/"/>
       <url>/2019/08/31/Web/%E3%84%B4%20Research/code/</url>
       
-        <content type="html"><![CDATA[<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">r = process(<span class="string">'binary'</span>)</span><br><span class="line"><span class="comment">#r = remote('address', port)</span></span><br><span class="line">e = ELF(<span class="string">'binary'</span>)</span><br><span class="line">libc = e.libc</span><br><span class="line"><span class="comment">#context.terminal=['tmux', 'splitw', '-h']</span></span><br><span class="line"><span class="comment">#gdb.attach(r)</span></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sa = <span class="keyword">lambda</span> a, b: r.sendafter(a, b)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line"><span class="comment">#binsh_offset = libc.search('/bin/sh').next()</span></span><br><span class="line"><span class="comment">#system_offset = libc.symbols['system']</span></span><br><span class="line"><span class="comment">#write_got = e.got['write']</span></span><br><span class="line"><span class="comment">#read_got = e.got['read']</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">''</span></span><br><span class="line">p += <span class="string">'\x90'</span></span><br></pre></td></tr></table></figure><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abc</span><span class="params">(N)</span>:</span></span><br><span class="line">r = N % <span class="number">2</span></span><br><span class="line">print(<span class="string">'*'</span>, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">if</span> N &gt;= <span class="number">2</span>:</span><br><span class="line">abc(N // <span class="number">2</span>)</span><br><span class="line">print(<span class="string">"%d"</span> % r, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">abc(<span class="number">78</span>)</span><br></pre></td></tr></table></figure><pre><code class="py"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(s, last)</span>:</span>        <span class="keyword">if</span> last &lt; <span class="number">0</span>:                <span class="keyword">return</span> <span class="number">0</span>            <span class="keyword">if</span> s[<span class="number">-1</span>] == <span class="string">'0'</span>:                <span class="keyword">return</span> <span class="number">2</span> * test(s, last<span class="number">-1</span>)            <span class="keyword">return</span> <span class="number">1</span> + <span class="number">2</span> * test(s, last<span class="number">-1</span>)        print(test(<span class="string">'110100111'</span>, <span class="number">4</span>))</code></pre>]]></content>
+        <content type="html"><![CDATA[<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">r = process(<span class="string">'binary'</span>)</span><br><span class="line"><span class="comment">#r = remote('address', port)</span></span><br><span class="line">e = ELF(<span class="string">'binary'</span>)</span><br><span class="line">libc = e.libc</span><br><span class="line"><span class="comment">#context.terminal=['tmux', 'splitw', '-h']</span></span><br><span class="line"><span class="comment">#gdb.attach(r)</span></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sa = <span class="keyword">lambda</span> a, b: r.sendafter(a, b)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line"><span class="comment">#binsh_offset = libc.search('/bin/sh').next()</span></span><br><span class="line"><span class="comment">#system_offset = libc.symbols['system']</span></span><br><span class="line"><span class="comment">#write_got = e.got['write']</span></span><br><span class="line"><span class="comment">#read_got = e.got['read']</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">''</span></span><br><span class="line">p += <span class="string">'\x90'</span></span><br></pre></td></tr></table></figure><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abc</span><span class="params">(N)</span>:</span></span><br><span class="line">r = N % <span class="number">2</span></span><br><span class="line">print(<span class="string">'*'</span>, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">if</span> N &gt;= <span class="number">2</span>:</span><br><span class="line">abc(N // <span class="number">2</span>)</span><br><span class="line">print(<span class="string">"%d"</span> % r, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">abc(<span class="number">78</span>)</span><br></pre></td></tr></table></figure><pre><code class="py"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(s, last)</span>:</span>        <span class="keyword">if</span> last &lt; <span class="number">0</span>:                <span class="keyword">return</span> <span class="number">0</span>            <span class="keyword">if</span> s[<span class="number">-1</span>] == <span class="string">'0'</span>:                <span class="keyword">return</span> <span class="number">2</span> * test(s, last<span class="number">-1</span>)            <span class="keyword">return</span> <span class="number">1</span> + <span class="number">2</span> * test(s, last<span class="number">-1</span>)        print(test(<span class="string">'110100111'</span>, <span class="number">4</span>))</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -26,31 +26,10 @@
     
     <entry>
       <title>테스트용</title>
-      <link href="/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/"/>
-      <url>/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</url>
-      
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Pwn </category>
-          
-          <category> ㄴ WriteUps </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>테스트용</title>
       <link href="/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/"/>
       <url>/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}&lt;!--￼<span class="number">0</span>--&gt;</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -71,7 +50,7 @@
       <link href="/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/"/>
       <url>/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -92,7 +71,7 @@
       <link href="/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/"/>
       <url>/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -113,7 +92,7 @@
       <link href="/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/"/>
       <url>/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -131,15 +110,15 @@
     
     <entry>
       <title>테스트용</title>
-      <link href="/2019/08/30/Crypto/%E3%84%B4%20WriteUps/TEST/"/>
-      <url>/2019/08/30/Crypto/%E3%84%B4%20WriteUps/TEST/</url>
+      <link href="/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/"/>
+      <url>/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
           
-          <category> Crypto </category>
+          <category> Pwn </category>
           
           <category> ㄴ WriteUps </category>
           
@@ -155,7 +134,7 @@
       <link href="/2019/08/30/Rev/%E3%84%B4%20Research/TEST/"/>
       <url>/2019/08/30/Rev/%E3%84%B4%20Research/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -176,7 +155,7 @@
       <link href="/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/"/>
       <url>/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -194,31 +173,10 @@
     
     <entry>
       <title>테스트용</title>
-      <link href="/2019/08/30/Crypto/%E3%84%B4%20Research/TEST/"/>
-      <url>/2019/08/30/Crypto/%E3%84%B4%20Research/TEST/</url>
-      
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Crypto </category>
-          
-          <category> ㄴ Research </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>테스트용</title>
       <link href="/2019/08/30/Web/%E3%84%B4%20Technology/TEST/"/>
       <url>/2019/08/30/Web/%E3%84%B4%20Technology/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -239,7 +197,7 @@
       <link href="/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/"/>
       <url>/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/</url>
       
-        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
