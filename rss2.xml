@@ -8,27 +8,8 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 02 Sep 2019 09:22:18 GMT</pubDate>
+    <pubDate>Mon, 02 Sep 2019 16:26:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>테스트용</title>
-      <link>http://defenit.github.io/2019/08/31/Web/%E3%84%B4%20Research/code/</link>
-      <guid>http://defenit.github.io/2019/08/31/Web/%E3%84%B4%20Research/code/</guid>
-      <pubDate>Sat, 31 Aug 2019 02:38:17 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;figure class=&quot;highlight py&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abc</span><span class="params">(N)</span>:</span></span><br><span class="line">r = N % <span class="number">2</span></span><br><span class="line">print(<span class="string">'*'</span>, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">if</span> N &gt;= <span class="number">2</span>:</span><br><span class="line">abc(N // <span class="number">2</span>)</span><br><span class="line">print(<span class="string">"%d"</span> % r, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">abc(<span class="number">78</span>)</span><br></pre></td></tr></table></figure><pre><code class="py"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(s, last)</span>:</span>        <span class="keyword">if</span> last &lt; <span class="number">0</span>:                <span class="keyword">return</span> <span class="number">0</span>            <span class="keyword">if</span> s[<span class="number">-1</span>] == <span class="string">'0'</span>:                <span class="keyword">return</span> <span class="number">2</span> * test(s, last<span class="number">-1</span>)            <span class="keyword">return</span> <span class="number">1</span> + <span class="number">2</span> * test(s, last<span class="number">-1</span>)        print(test(<span class="string">'110100111'</span>, <span class="number">4</span>))</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/31/Web/%E3%84%B4%20Research/code/#disqus_thread</comments>
-    </item>
     
     <item>
       <title></title>
@@ -85,86 +66,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
       
       <comments>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>테스트용</title>
-      <link>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20Research/TEST/</link>
-      <guid>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20Research/TEST/</guid>
-      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20Research/TEST/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>테스트용</title>
-      <link>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/</link>
-      <guid>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/</guid>
-      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/30/Rev/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>테스트용</title>
-      <link>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20Technology/TEST/</link>
-      <guid>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20Technology/TEST/</guid>
-      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20Technology/TEST/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>테스트용</title>
-      <link>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/</link>
-      <guid>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/</guid>
-      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>{<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);<span class="keyword">return</span> <span class="number">0</span>;}</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/30/Web/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
     </item>
     
   </channel>
