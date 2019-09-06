@@ -32,45 +32,6 @@
     
     <item>
       <title></title>
-      <link>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</link>
-      <guid>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</guid>
-      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;div class=&quot;spoiler collapsed&quot;&gt;&lt;div class=&quot;spoiler-title&quot;&gt;본문&lt;/div&gt;&lt;div class=&quot;spoiler-content&quot;&gt;&lt;p&gt;printf(“Hello World\n”);&lt;br&gt;return 0;&lt;/p&gt;
-
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<div class="spoiler collapsed"><div class="spoiler-title">본문</div><div class="spoiler-content"><p>printf(“Hello World\n”);<br>return 0;</p></div></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</link>
-      <guid>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</guid>
-      <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/spoiler.css&quot; type=&quot;text/css&quot;&gt;&lt;script src=&quot;/js/spoiler.js&quot; type=&quot;text/javascript&quot; async&gt;&lt;/script&gt;
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
-      
-      <comments>http://defenit.github.io/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</link>
       <guid>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</guid>
       <pubDate>Fri, 30 Aug 2019 08:20:08 GMT</pubDate>

@@ -26,48 +26,6 @@
     
     <entry>
       <title></title>
-      <link href="/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/"/>
-      <url>/2019/08/30/Forensic/%E3%84%B4%20Research/TEST/</url>
-      
-        <content type="html"><![CDATA[<div class="spoiler collapsed"><div class="spoiler-title">본문</div><div class="spoiler-content"><p>printf(“Hello World\n”);<br>return 0;</p></div></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Forensic </category>
-          
-          <category> ㄴ Research </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/"/>
-      <url>/2019/08/30/Forensic/%E3%84%B4%20WriteUps/TEST/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Forensic </category>
-          
-          <category> ㄴ WriteUps </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/"/>
       <url>/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</url>
       
