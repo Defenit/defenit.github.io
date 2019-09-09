@@ -8,16 +8,24 @@
     </url>
 
     <url>
-        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</loc>
-        <lastmod>2019-09-02T16:26:58.773Z</lastmod>
+        <loc>http://defenit.github.io/2019/09/09/%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%85%8C%EC%8A%A4%ED%8A%B8/</loc>
+        <lastmod>2019-09-09T16:33:24.092Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20Technology/TEST/</loc>
-        <lastmod>2019-09-02T16:26:44.700Z</lastmod>
+        <loc>http://defenit.github.io/2019/09/09/Pwn/%E3%84%B4%20Technology/Defenit/</loc>
+        <lastmod>2019-09-09T06:44:51.766Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://defenit.github.io/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</loc>
+        <lastmod>2019-09-02T16:26:58.773Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
