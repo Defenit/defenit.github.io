@@ -4,75 +4,12 @@
   
     
     <entry>
-      <title>테스트테스트테스트</title>
-      <link href="/2019/09/09/%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%85%8C%EC%8A%A4%ED%8A%B8/"/>
-      <url>/2019/09/09/%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%85%8C%EC%8A%A4%ED%8A%B8/</url>
+      <title>test</title>
+      <link href="/2019/09/16/test/"/>
+      <url>/2019/09/16/test/</url>
       
-        <content type="html"><![CDATA[<p><br><br></p><script src="//gist.github.com/49a2c3862f3aad9627a5e3fed3e3a9bc.js"></script><p>d</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/09/09/Pwn/%E3%84%B4%20Technology/Defenit/"/>
-      <url>/2019/09/09/Pwn/%E3%84%B4%20Technology/Defenit/</url>
-      
-        <content type="html"><![CDATA[<h1 id="테스트"><a href="#테스트" class="headerlink" title="테스트"></a>테스트</h1><p><code>안녕하세요</code></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Pwn </category>
-          
-          <category> ㄴ Technology </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/"/>
-      <url>/2019/08/30/Pwn/%E3%84%B4%20Research/TEST/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Pwn </category>
-          
-          <category> ㄴ Research </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/"/>
-      <url>/2019/08/30/Pwn/%E3%84%B4%20WriteUps/TEST/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Pwn </category>
-          
-          <category> ㄴ WriteUps </category>
-          
-      </categories>
       
       
     </entry>
