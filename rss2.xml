@@ -8,8 +8,28 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 17 Sep 2019 14:11:54 GMT</pubDate>
+    <pubDate>Tue, 17 Sep 2019 14:13:17 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>asdads</title>
+      <link>http://defenit.github.io/2019/09/17/asdads/</link>
+      <guid>http://defenit.github.io/2019/09/17/asdads/</guid>
+      <pubDate>Tue, 17 Sep 2019 14:13:12 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;asdasd&lt;/p&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/spoiler.css&quot; type=&quot;text/css&quot;&gt;&lt;script src=&quot;/js/spoiler.js&quot; type=&quot;text/javascript&quot; async&gt;&lt;/scr
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>asdasd</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
+      
+      <comments>http://defenit.github.io/2019/09/17/asdads/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Test</title>
