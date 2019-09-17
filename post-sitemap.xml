@@ -2,13 +2,13 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://defenit.github.io</loc>
+        <loc>https://defenit.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://defenit.github.io/2019/09/17/asd/</loc>
+        <loc>https://defenit.github.io/2019/09/17/asd/</loc>
         <lastmod>2019-09-17T14:15:28.594Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -16,7 +16,7 @@
     </url>
 
     <url>
-        <loc>http://defenit.github.io/2019/09/17/asdads/</loc>
+        <loc>https://defenit.github.io/2019/09/17/asdads/</loc>
         <lastmod>2019-09-17T14:13:21.449Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -24,7 +24,7 @@
     </url>
 
     <url>
-        <loc>http://defenit.github.io/2019/09/17/Test/</loc>
+        <loc>https://defenit.github.io/2019/09/17/Test/</loc>
         <lastmod>2019-09-17T14:11:54.631Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
