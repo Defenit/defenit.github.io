@@ -4,7 +4,7 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Defenit 블로그</title>
-    <link>https://defenit.github.io/</link>
+    <link>https://defenit.kr/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
@@ -13,8 +13,8 @@
     
     <item>
       <title>Test</title>
-      <link>https://defenit.github.io/2019/09/17/Test/</link>
-      <guid>https://defenit.github.io/2019/09/17/Test/</guid>
+      <link>https://defenit.kr/2019/09/17/Test/</link>
+      <guid>https://defenit.kr/2019/09/17/Test/</guid>
       <pubDate>Tue, 17 Sep 2019 14:11:49 GMT</pubDate>
       <description>
       
@@ -28,7 +28,7 @@
       
       <content:encoded><![CDATA[<p>dasdsa</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content:encoded>
       
-      <comments>https://defenit.github.io/2019/09/17/Test/#disqus_thread</comments>
+      <comments>https://defenit.kr/2019/09/17/Test/#disqus_thread</comments>
     </item>
     
   </channel>
