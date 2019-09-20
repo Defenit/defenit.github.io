@@ -4,12 +4,22 @@
 
     <sitemap>
         <loc>https://defenit.kr/post-sitemap.xml</loc>
-        <lastmod>2019-09-17T15:12:10.074Z</lastmod>
+        <lastmod>2019-09-20T09:27:25.762Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://defenit.kr/page-sitemap.xml</loc>
         <lastmod>2019-09-02T16:23:13.904Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://defenit.kr/category-sitemap.xml</loc>
+        <lastmod>2019-09-20T09:27:25.762Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://defenit.kr/tag-sitemap.xml</loc>
+        <lastmod>2019-09-20T09:27:25.762Z</lastmod>
     </sitemap>
 
 </sitemapindex>
