@@ -16,14 +16,14 @@
 <meta name="keywords" content="ARM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARM 기초">
-<meta property="og:url" content="https://defenit.kr/2019/09/20/Pwn/ㄴ Technology/ARM_기초/index.html">
+<meta property="og:url" content="https://defenit.kr/2019/09/20/Pwn/-/Technology/ARM_기초/index.html">
 <meta property="og:site_name" content="Defenit 블로그">
 <meta property="og:description" content="목차 ARM (Advanced Risc Machine) Thumb 모드 / ARM 모드 ARM Instruction Thumb Instruction   ARM 레지스터 ARM Intruction ARM Assembly Branch Instruction (분기 명령) LDR and STR Instruction (단일 데이터 이동명령) LDM and STM I">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/43925259/65316068-33326080-dbd4-11e9-9492-eb2fe8ca2f68.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/43925259/65316071-34fc2400-dbd4-11e9-8ce2-2359099cb254.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/43925259/65315814-b901dc00-dbd3-11e9-9416-5103eb9595a0.png">
-<meta property="og:updated_time" content="2019-09-21T14:41:44.390Z">
+<meta property="og:updated_time" content="2019-09-21T14:40:40.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARM 기초">
 <meta name="twitter:description" content="목차 ARM (Advanced Risc Machine) Thumb 모드 / ARM 모드 ARM Instruction Thumb Instruction   ARM 레지스터 ARM Intruction ARM Assembly Branch Instruction (분기 명령) LDR and STR Instruction (단일 데이터 이동명령) LDM and STM I">
@@ -36,7 +36,7 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Defenit 블로그">
-  <meta name="msapplication-starturl" content="https://defenit.kr/2019/09/20/Pwn/ㄴ Technology/ARM_기초/">
+  <meta name="msapplication-starturl" content="https://defenit.kr/2019/09/20/Pwn/-\Technology/ARM_기초/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Defenit 블로그">
@@ -45,11 +45,11 @@
 
   
     <meta property="article:published_time" content="Fri Sep 20 2019 17:52:46 GMT+0900">
-    <meta property="article:modified_time" content="Sat Sep 21 2019 23:41:44 GMT+0900">
+    <meta property="article:modified_time" content="Sat Sep 21 2019 23:40:40 GMT+0900">
   
 
   
-    <link rel="canonical" href="https://defenit.kr/2019/09/20/Pwn/ㄴ Technology/ARM_기초/">
+    <link rel="canonical" href="https://defenit.kr/2019/09/20/Pwn/-\Technology/ARM_기초/">
   
 
   <meta name="google-site-verification" content="Zw9X-H7aB3j4IjiTtdPzc5YXGbBCqAe65ysy9o2dOL8">
@@ -163,7 +163,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aQXaDMAwFwNz/0u22i0K+JGxoOqz6EmI8LCz3W6+vj75eeHh4eHh4eHh4D+O94uvn/ee//eWRByMc3dObGx4eHt5O3pul9nRyCe98nMOJFueGh4eHt5+XFINeSXizlLeKEB4eHt5f4VVJ5y8IDw8P7z/wkk1wvjlO2Hh4eHhP5hX+4Y+j3mrZyMfBw8PDu5c3OQBb/ffN53t4eHh446arI/A86s2LQaHpCg8PD28B73yi5+Wh+vkk6i00HODh4eEt5uU/y4Pa3rf5KyjEuHh4eHiLeflwkxi3GjQkDVt4eHh4O3nVTXCPnUcM1eAYDw8P7y5e72H5oX41xp3ciYeHh7eflzcNTELY5KVUwws8PDy8nbxezFpdyq8qLW+KGR4eHt523orJJYdhvRYEPDw8vP286lF9tRUgCTuqMykUBjw8PLwFvOoQvXvysLjXxICHh4e3kzdf6POmgV5DQA7Dw8PD28/rNaEmrVd5wNFrAsPDw8PbyctbBMpxalxOvuLr4vM9PDw8vGW8ZOOb/7Y6WjlExsPDw1vM60Wr1ci1GnNMomQ8PDy8PbxJGNE7GOvFEzfEuHh4eHhB68D8aH++0FefhYeHh7eTV72qAe6krSoPTfDw8PB28nqLchIu5C+o96zyARgeHh7epby8GOQb3PyeapBRbh3Aw8PDW8abBLi9hT7fdheKEx4eHt7DeNVjsASflITkqAwPDw/vybxqCNsLMvJWAzw8PLy7eFdtmpNPqqPl2308PDy8Pbx5EDA/KjsvAKMYFw8PD+9S3uddeHh4eHh4eHh4D7i+AbuahpIsZqc9AAAAAElFTkSuQmCC">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXUlEQVR42u3aQXLjMAwEQP//05sHbEkZACakSrVOLseJ2TyQyACff3/6+eDh4eHh4eHh4b2M94mfq9+6euf/z+evR2vDw8PDW+H9ctTeLvoKebXcHj5fGx4eHt4m72px9697n6xuR7I2PDw8vDfzqkvJ/+bkM3h4eHhv5t0z8gJ6smV4eHh4b+Al//Dn8W4S9d5/+wNZCx4eHl7My5tM+69X+3t4eHh4Aa880lQsfyfXzAMzZXh4eHgBrxq/TgrrpNTurQcPDw9vk5cf/UkU24sYkm3K4ww8PDy8fV71sO5tQR7UlrcPDw8P7zBvckxXGclBn1wJo9EBPDw8vMNDV3kwMTnKJzA8PDy8p3h5WytvcU2GEvLIAw8PD2+fV41Zq4NTOXuy3Xh4eHibvF65nEe61bGD/OIpxLh4eHh4x3i9NlhefPcGucrbh4eHh7fISxadXxXfvUKSbcXDw8Pb51VL54RRbY9NWl94eHh4+7y84VQdIOgNJeR/AQ8PD2+f17sMksVVl1gduoouBjw8PLzDvN7RXx0mOPgOHh4e3jovD3C/VYLnP41KcDw8PLxF3rkwImmV3RflowYYHh4e3iKvVxzn0UYv6sXDw8N7lld9qu2rb21W4YrCw8PDO8ybNPV7rf088kgiiSiMwMPDwzvA6x3l1aAheb86yoCHh4f3LC8ftMpj1uqYwuSawcPDw3szbzK0mnxvdSPw8PDw3s9LDvpqq6wA2Cmp8fDw8L4URiSRa6+A7sUZeHh4eE/xqkNO82VVQ94ciYeHh3ea9/cePDw8PDw8PDy8Fzw//6s+2pob7r4AAAAASUVORK5CYII=">
               
             </li>
           </ul>
@@ -172,7 +172,7 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/2019/09/20/Pwn/ㄴ Technology/ARM_기초/" target="_blank" class="mdui-ripple">페이스북 공유</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/2019/09/20/Pwn/-\Technology/ARM_기초/" target="_blank" class="mdui-ripple">페이스북 공유</a>
             </li>
           </ul>
         
@@ -428,12 +428,12 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2019/09/20/Pwn/-\Technology/ARM_기초/">
-        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;다음 글
-      </a>
-    
     <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/09/20/Pwn/ㄴ Technology/ARM_기초/">
+        이전 글&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
     
   </nav>
 
