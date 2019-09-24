@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Defenit 블로그">
 <meta property="og:description" content="목차 RSA Key Gen RSA 암호화 및 복호화 암호화 복호화   RSA 문제 종류 d값 계산 낮은 지수 공격 n값 소인수 분해 및 DB 이용 위너 공격 하스타드 공격 선택 암호문 공격 p, q값이 비슷할 경우 n 값으로 p, q값 구하기   레퍼런스 문서 역사     RSA Key Gen p, q 선택  python에선 다음과 같이 p, q를 생성할">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-24T03:06:24.945Z">
+<meta property="og:updated_time" content="2019-09-24T03:25:57.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSA for CTF">
 <meta name="twitter:description" content="목차 RSA Key Gen RSA 암호화 및 복호화 암호화 복호화   RSA 문제 종류 d값 계산 낮은 지수 공격 n값 소인수 분해 및 DB 이용 위너 공격 하스타드 공격 선택 암호문 공격 p, q값이 비슷할 경우 n 값으로 p, q값 구하기   레퍼런스 문서 역사     RSA Key Gen p, q 선택  python에선 다음과 같이 p, q를 생성할">
@@ -41,7 +41,7 @@
 
   
     <meta property="article:published_time" content="Tue Sep 24 2019 11:42:39 GMT+0900">
-    <meta property="article:modified_time" content="Tue Sep 24 2019 12:06:24 GMT+0900">
+    <meta property="article:modified_time" content="Tue Sep 24 2019 12:25:57 GMT+0900">
   
 
   
@@ -227,7 +227,7 @@
 </li>
 <li><p><strong>d 계산</strong></p>
 <ul>
-<li><p>d ≡ <script type="math/tex">e^{-1}</script> mod n</p>
+<li><p>d = <script type="math/tex">e^{-1}</script> mod n</p>
 <ul>
 <li><strong>mod phi에 대한 e의 곱셈의 역원</strong></li>
 </ul>
@@ -263,7 +263,7 @@
 <hr>
 
 
-<h3 id="RSA-문제-종류"><a href="#RSA-문제-종류" class="headerlink" title="RSA 문제 종류"></a>RSA 문제 종류</h3><ol>
+<h3 id="RSA-문제-종류"><a href="#RSA-문제-종류" class="headerlink" title="RSA 문제 종류"></a>RSA 문제 종류</h3><ul>
 <li><p><strong>d값 계산</strong></p>
 <ul>
 <li><strong>p, q, e 값 등이 주어졌을 경우</strong> n값과 phi 값을 계산 가능하기 때문에 d 값을 계산하면 된다.</li>
@@ -281,8 +281,8 @@
 </li>
 </ul>
 </li>
-</ol>
-<ol>
+</ul>
+<ul>
 <li><p><strong>낮은 지수 공격</strong></p>
 <ul>
 <li><p><strong>e 값과 매우 작고 n 값이 큰 경우</strong> 가능한 공격 방법</p>
@@ -307,8 +307,8 @@
 </li>
 </ul>
 </li>
-</ol>
-<ol>
+</ul>
+<ul>
 <li><p><strong>n값 소인수 분해 및 DB 이용</strong></p>
 <ul>
 <li><p><strong>작은 수의 n</strong>과 e만 주어졌을 경우 또는 <strong>DB에 존재하는 소수</strong>인 경우 가능한 공격 방법</p>
@@ -327,8 +327,8 @@
 </li>
 </ul>
 </li>
-</ol>
-<ol>
+</ul>
+<ul>
 <li><p><strong>위너 공격</strong></p>
 <ul>
 <li><p><strong>e 값이 매우 큰경우</strong> 가능한 공격 방법</p>
@@ -349,8 +349,8 @@
 </li>
 </ul>
 </li>
-</ol>
-<ol>
+</ul>
+<ul>
 <li><p><strong>하스타드 공격</strong></p>
 <ul>
 <li><p><strong>n값과 c 값이 3개씩 주어 지며 e 값이 작은 경우</strong>에 가능한 공격 방법</p>
@@ -367,8 +367,8 @@
 </li>
 </ul>
 </li>
-</ol>
-<ol>
+</ul>
+<ul>
 <li><p><strong>선택 암호문 공격</strong></p>
 <ul>
 <li><p><strong>원하는 암호문을 복호화 해주는 경우</strong> 가능한 공격 방법(<strong>단, flag는 복호화해주지 않음</strong>)</p>
@@ -387,8 +387,8 @@
 </li>
 </ul>
 </li>
-</ol>
-<ol>
+</ul>
+<ul>
 <li><p><strong>p, q값이 비슷할 경우 n 값으로 p, q값 구하기</strong></p>
 <ul>
 <li><p>gmpy2 모듈의 <code>next_prime</code> 함수를 이용할 경우 p, q 값이 거의 차이가 나지 않는다.</p>
@@ -405,7 +405,7 @@
 </li>
 </ul>
 </li>
-</ol>
+</ul>
 <hr>
 
 
