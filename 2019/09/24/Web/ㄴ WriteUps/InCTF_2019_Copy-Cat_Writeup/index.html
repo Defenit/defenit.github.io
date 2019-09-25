@@ -16,7 +16,7 @@
 <meta name="keywords" content="Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="InCTF 2019 Copy-Cat Write up">
-<meta property="og:url" content="https://defenit.kr/2019/09/24/Web/ㄴ WriteUps/테스트테스트/index.html">
+<meta property="og:url" content="https://defenit.kr/2019/09/24/Web/ㄴ WriteUps/InCTF_2019_Copy-Cat_Writeup/index.html">
 <meta property="og:site_name" content="Defenit 블로그">
 <meta property="og:description" content="해당 문제는 인도의 bi0s Team에서 주최한 InCTF 2019의 Copy-Cat이란 Web 문제입니다. 문제 풀면서 얻어간 것도 있고, 개인적으로는 해당 대회에서 가장 재밌게 푼 문제라 Write up을 작성하게 되었습니다.  문제분석문제 소스 :  Copy-Cat.zip 해당 문제는 전체 소스코드를 제공해주는 화이트박스 형식의 문제였습니다. 소스코">
 <meta property="og:locale" content="en">
@@ -39,7 +39,7 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Defenit 블로그">
-  <meta name="msapplication-starturl" content="https://defenit.kr/2019/09/24/Web/ㄴ WriteUps/테스트테스트/">
+  <meta name="msapplication-starturl" content="https://defenit.kr/2019/09/24/Web/ㄴ WriteUps/InCTF_2019_Copy-Cat_Writeup/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Defenit 블로그">
@@ -52,7 +52,7 @@
   
 
   
-    <link rel="canonical" href="https://defenit.kr/2019/09/24/Web/ㄴ WriteUps/테스트테스트/">
+    <link rel="canonical" href="https://defenit.kr/2019/09/24/Web/ㄴ WriteUps/InCTF_2019_Copy-Cat_Writeup/">
   
 
   <meta name="google-site-verification" content="Zw9X-H7aB3j4IjiTtdPzc5YXGbBCqAe65ysy9o2dOL8">
@@ -166,7 +166,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aS3ICMQwFQO5/6WSbDTNPEhVA7llRKYPdXkSjz+PnyOeBjY2NjY2NjY2N/ZHsR/z8Xd/7bvKt65WjfbGxsbFXs2/+9V+uuT70szX5+uS7yZmxsbGxT2C/KmjdbD8IXb0zY2NjY2PnmB4vX4+NjY2N/Vp2UvTJk5Nna5LP2NjY2Nh5gaYazJKAlO/1tloaNjY29sezJ43ed31+c38bGxsb+2PYzUHGVunnVeWn5pmxsbGxl7LzV/9eaWk+jlNtITdradjY2Nhfy86LMr3NeiGw+jvRNWFjY2MvZffGYvIBzepv5mcrB0JsbGzs1ez80JPRzGTEZ1KKKheVsLGxsRex89f9fLPrq8x5eZHr5uqxsbGxl7LzQ1SD0CQQ5nsVEiFsbGzs1ey8ATA51nzEJ29FY2NjY5/D7o3dzJvE+RXk7YGb3bGxsbGXsquBqlcw6o1a5rs0i0rY2NjYK9jVl/tekpAkOb2TXF8cNjY29pnsyRBkr9zTawZXkxlsbGzsM9lJeMibvtUi1KQsFdXSsLGxsRex89f96wQgP+gkjWkmRdjY2Nir2ZOGQZ6ovGqYshcOsbGxsbeyc2ReVErK99VCfy9BwsbGxj6BXS0GTXiFI8bJz2jmFBsbG3sdu7dlcmXJyrxQlQdXbGxs7BPYvR/K2wa9lm0vvI0yMGxsbOyvZU9CTpJyVAeDek3fZtzGxsbGXsGuNnGrrYI8TObNiWqrGBsbG3s3uzp8k5R7kqBV/ftkAAgbGxt7N7v69FoF82A5uTJsbGzs3exH/JTL8eOL+NdaGjY2NvaXs+dBK2855FdQbT/fKLCxsbEPYOfBKSk29ZKN6yvuXRw2NjY29qS5W20qVH+h0GDGxsbGxo7bt73BzWpCUj4nNjY29gHsvKg0TxXme1UDJDY2NvZudrXR22snJEdPmhDVYIaNjY29m33Og42NjY2NjY2Njf0xzy87pdi7VeNWnQAAAABJRU5ErkJggg==">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC00lEQVR42u3awWrDMBAE0Pz/T7fXQkgyszLUkZ5PJWltPRk67K4eP0deD2xsbGxsbGxsbOxbsh/x9ff3X966vM/z589PSf72/bOwsbGxT2B/+NcfsN8vPafmG5GvGRsbG/scdh5as4h6dc82ModrxsbGxsaOi4T1CHwVY9jY2NjY1wZYW4TMNut2uY2NjY19Y3bRoCnb9ytbdoteGjY2Nvbt2bNB7//+/G/zbWxsbOybsdsraffkS1wZJNcrx8bGxt6UPSsq8kXnpchs2JCPFrCxsbFPY7dB1Q5rr2paFRGIjY2NfQA7bzblRUhb5KyHWV2KYGNjY385O6HOlrh+TCffxCQssbGxsXdlryBnRUIOmLW3hvNtbGxs7I3YybLyoiU/XtludPsUbGxs7HPYeasoJ60f7lwZ8WJjY2Pvzc6LgZVvk09qRvyqsLGxsfdm56EyW9CsSZRvUFFEYWNjY2/KzkeneWEwG9DOmkdFuGJjY2MfwG5Dom1Itc+dNaSwsbGxT2a/b9CvwPJR7spI+MOIAhsbG/swdtLouWpUnJQus8YWNjY29pnsPCqGjy9LiLw5tTTfxsbGxv5adnvAcVYM5EXFLMyi14aNjY19ADsf6yYhlBQhs8ZW8lxsbGzsc9jvi4EW0G5c3qJqgy2qwLCxsbE3YidhkA9924BpBwazY5rY2NjYe7OTRa8PYlfKlVm4YmNjY5/AnrX+rypa2k+SIQE2Njb2aewZclbM5EdtZuE3PKmEjY2NvRE7OvgSx0YeXe0dhoNqbGxs7E3Zbas9X24eM1fxivEANjY29nbsJLTWSTksicz8NWBjY2Ofw56F1noLqS2B2ojFxsbGxs5bQm2w5exkGFw3lbCxsbGx47FBEmx5OM2CEBsbG/sEdlJCtC3+ZCMSWL5Z2NjY2GeyZxEyOwSZt5ySF1OsBxsbG3tT9jkXNjY2NjY2NjY29m2uX6g4mt1nRgwyAAAAAElFTkSuQmCC">
               
             </li>
           </ul>
@@ -175,7 +175,7 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/2019/09/24/Web/ㄴ WriteUps/테스트테스트/" target="_blank" class="mdui-ripple">페이스북 공유</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/2019/09/24/Web/ㄴ WriteUps/InCTF_2019_Copy-Cat_Writeup/" target="_blank" class="mdui-ripple">페이스북 공유</a>
             </li>
           </ul>
         
