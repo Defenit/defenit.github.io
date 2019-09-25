@@ -8,16 +8,24 @@
     </url>
 
     <url>
-        <loc>https://defenit.kr/2019/09/24/Crypto/%E3%84%B4%20Research/RSA_for_CTF/</loc>
-        <lastmod>2019-09-24T03:25:57.140Z</lastmod>
+        <loc>https://defenit.kr/2019/09/24/Web/%E3%84%B4%20WriteUps/%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%85%8C%EC%8A%A4%ED%8A%B8/</loc>
+        <lastmod>2019-09-25T15:00:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://defenit.kr/2019/09/20/Pwn/%E3%84%B4%20Technology/ARM_%EA%B8%B0%EC%B4%88/</loc>
-        <lastmod>2019-09-21T14:41:44.390Z</lastmod>
+        <loc>https://defenit.kr/2019/09/20/Pwn/%E3%84%B4%20Research/ARM_%EA%B8%B0%EC%B4%88/</loc>
+        <lastmod>2019-09-25T05:15:30.716Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://defenit.kr/2019/09/24/Crypto/%E3%84%B4%20Research/RSA_for_CTF/</loc>
+        <lastmod>2019-09-24T11:31:13.012Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
