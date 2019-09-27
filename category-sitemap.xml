@@ -8,6 +8,34 @@
     </url>
 
     <url>
+        <loc>https://defenit.kr/categories/Pwn/%E3%84%B4-Research/</loc>
+        <lastmod>2019-09-27T05:14:11.590Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://defenit.kr/categories/Pwn/</loc>
+        <lastmod>2019-09-27T05:14:11.590Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://defenit.kr/categories/Rev/%E3%84%B4-Research/</loc>
+        <lastmod>2019-09-27T04:49:33.613Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://defenit.kr/categories/Rev/</loc>
+        <lastmod>2019-09-27T04:49:33.613Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://defenit.kr/categories/Web/%E3%84%B4-WriteUps/</loc>
         <lastmod>2019-09-25T15:21:33.993Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,20 +45,6 @@
     <url>
         <loc>https://defenit.kr/categories/Web/</loc>
         <lastmod>2019-09-25T15:21:33.993Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://defenit.kr/categories/Pwn/%E3%84%B4-Research/</loc>
-        <lastmod>2019-09-25T05:15:30.716Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://defenit.kr/categories/Pwn/</loc>
-        <lastmod>2019-09-25T05:15:30.716Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
