@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://user-images.githubusercontent.com/43925259/65742854-ed721c80-e12c-11e9-8d4f-9d4c33f0c3dc.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/43925259/65742856-f19e3a00-e12c-11e9-85b9-7b90237a72b7.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/43925259/65742857-f367fd80-e12c-11e9-8079-db276e9336c6.png">
-<meta property="og:updated_time" content="2019-09-27T05:14:11.590Z">
+<meta property="og:updated_time" content="2019-09-27T05:24:01.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Jail Tips">
 <meta name="twitter:description" content="목차 문자열 만들기 숫자 만들기 문자열 합치기 응용 Tips     문자열 만들기 chr(0x61)          # ‘a’ str(1)                # ‘1’ dir([])[0][2] # ‘a’ dir([])만 입력했을 때 결과는 다음과 같고 이를 인덱싱해서 문자열을 얻는 것이다.          숫자 만들기 ~(()&amp;lt;())">
@@ -45,7 +45,7 @@
 
   
     <meta property="article:published_time" content="Fri Sep 27 2019 13:48:25 GMT+0900">
-    <meta property="article:modified_time" content="Fri Sep 27 2019 14:14:11 GMT+0900">
+    <meta property="article:modified_time" content="Fri Sep 27 2019 14:24:01 GMT+0900">
   
 
   
@@ -295,7 +295,10 @@
 <li><h5 id="execfile-사용"><a href="#execfile-사용" class="headerlink" title="execfile 사용"></a><code>execfile 사용</code></h5><ul>
 <li><p><code>execfile(&#39;/usr/lib/python2.7/os.py&#39;)</code> 처럼 사용할 경우 os 모듈의 함수 사용 가능</p>
 <ul>
-<li>주소는 서버 환경에 따라 다를수도 있다.</li>
+<li><p>주소는 서버 환경에 따라 다를수도 있다.</p>
+</li>
+<li><p><code>from os import *</code>가 된 것과 동일하기 때문에 <code>system(&quot;/bin/sh&quot;)</code> 가능</p>
+</li>
 </ul>
 </li>
 </ul>
