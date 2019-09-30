@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://defenit.kr/tags/malloc/</loc>
+        <lastmod>2019-09-30T14:31:26.081Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://defenit.kr/tags/python-jail/</loc>
         <lastmod>2019-09-27T05:24:01.051Z</lastmod>
         <changefreq>weekly</changefreq>

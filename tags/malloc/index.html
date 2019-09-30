@@ -8,22 +8,18 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>팀원 정보 | Defenit 블로그</title>
+  <title>태그: malloc | Defenit 블로그</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/rss2.xml" title="Defenit 블로그">
-  <meta name="description" content="[포너블]윤준원 (JSec) - BOB 8기 취약점22살, 강남포너블https://blog.naver.com/yjw_sz 조정훈 (st4nw)18살포너블0x0.site 최종현 (j0n9hyun)21살, 대구포너블https://j0n9hyun.xyz/https://j0n9hyun.github.io/https://ctf.j0n9hyun.xyz/ 김현우 (V4b">
-<meta name="keywords" content="Defenit, Hacking, Securify, Exploit, Kernel, Research">
+  <meta name="keywords" content="Defenit, Hacking, Securify, Exploit, Kernel, Research">
 <meta property="og:type" content="website">
-<meta property="og:title" content="팀원 정보">
-<meta property="og:url" content="https://defenit.kr/about/index.html">
+<meta property="og:title" content="Defenit 블로그">
+<meta property="og:url" content="https://defenit.kr/tags/malloc/index.html">
 <meta property="og:site_name" content="Defenit 블로그">
-<meta property="og:description" content="[포너블]윤준원 (JSec) - BOB 8기 취약점22살, 강남포너블https://blog.naver.com/yjw_sz 조정훈 (st4nw)18살포너블0x0.site 최종현 (j0n9hyun)21살, 대구포너블https://j0n9hyun.xyz/https://j0n9hyun.github.io/https://ctf.j0n9hyun.xyz/ 김현우 (V4b">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-02T16:23:13.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="팀원 정보">
-<meta name="twitter:description" content="[포너블]윤준원 (JSec) - BOB 8기 취약점22살, 강남포너블https://blog.naver.com/yjw_sz 조정훈 (st4nw)18살포너블0x0.site 최종현 (j0n9hyun)21살, 대구포너블https://j0n9hyun.xyz/https://j0n9hyun.github.io/https://ctf.j0n9hyun.xyz/ 김현우 (V4b">
+<meta name="twitter:title" content="Defenit 블로그">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
@@ -32,7 +28,7 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Defenit 블로그">
-  <meta name="msapplication-starturl" content="https://defenit.kr/about/">
+  <meta name="msapplication-starturl" content="https://defenit.kr/tags/malloc/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Defenit 블로그">
@@ -42,7 +38,7 @@
   
 
   
-    <link rel="canonical" href="https://defenit.kr/about/index.html">
+    <link rel="canonical" href="https://defenit.kr/tags/malloc/index.html">
   
 
   <meta name="google-site-verification" content="Zw9X-H7aB3j4IjiTtdPzc5YXGbBCqAe65ysy9o2dOL8">
@@ -136,75 +132,34 @@
 </aside>
 
   <main id="main" class="mdui-m-t-5 fadeIn animated">
-  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
-  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
-  <article class="mdui-card mdui-m-b-5">
-    <header class="mdui-card-media">
-      <img src="https://user-images.githubusercontent.com/16969364/64077190-b6187780-cd08-11e9-84f5-11fde74d88de.png" style="max-height: 340px;">
-      <div class="mdui-card-media-covered">
-        <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">팀원 정보</div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-08-29 / <i class="iconfont">&#xe601;</i> j0n9hyun</div>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/2019/09/30/Pwn/ㄴ Research/malloc/">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/cover.png" style="max-height: 90px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">malloc.c Analysis</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-09-30 / <i class="iconfont">&#xe601;</i> nonetype</div>
+          </div>
         </div>
-      </div>
-      <div class="mdui-card-menu">
-        
-          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
-          <ul class="mdui-menu" id="qrcode">
-            
-              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
-            
-            <li class="mdui-menu-item" disabled>
-              
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB1ElEQVR42u3aQYLCMAgF0N7/0jMXGDuf0KoNLysXJvI2GALHzxbrwMDAwMDAwMD4GsYRr/Ndf/xMsLcVAwYGxjDGP6ktYCTnvDpzMQYMDIyRjFdhJd/JQ1w7HwMDA6PKyEk5DAMDA+NuRqe4xcDAwLi2iM1DzMvaD9TiGBgYD2Tkj/L3fX5rfwMDA+NRjPKIQ/GhLU/Wb50ZwcDAeBQjT3z5RTBpBuRJHwMDA6P6uJ8EvXb1zFM5BgbGZEb1Oth5eltrhWJgYMxkJIFWv9lJ4nlCx8DAmMOINgS8fpOy/DeAgYExjLE2mJWXuB8oYjEwMDZirKXXpKztXB/LCRcDA2NrRjKq1Q+083jXKmIxMDDGMPIx1ure22txDAyMTRn9wjUn5WVzVItjYGAMYFQveXnpu5ZkFxMuBgbG1oz8oS1vBuSB3lLEYmBgbMfIm5rV8Yu80C00DzAwMMYwqit/nqu2LXMeBgbGNMbaqNZVga6dgIGBMZNxVZLtjILlz38YGBiTGdVWYl7Q9ovYxWELDAyMwYzOo9tlIxoYGBgYjetgh1Q4HwMDYyQjb0CeB1Rtap5fBzEwMDCqKa+aZDvp+8b+BgYGxqMYz10YGBgYGBgYGB9dvzx06RYYxpmLAAAAAElFTkSuQmCC">
-              
-            </li>
-          </ul>
-        
-        
-          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
-          <ul class="mdui-menu" id="share_menu">
-            <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/about/index.html" target="_blank" class="mdui-ripple">페이스북 공유</a>
-            </li>
-          </ul>
-        
-      </div>
-    </header>
+      </header>
+    </a>
     <div class="mdui-card-content mdui-typo">
-      <p>[포너블]<br>윤준원 (JSec) - BOB 8기 취약점<br>22살, 강남<br>포너블<br><a href="https://blog.naver.com/yjw_sz" target="_blank" rel="noopener">https://blog.naver.com/yjw_sz</a></p>
-<p>조정훈 (st4nw)<br>18살<br>포너블<br>0x0.site</p>
-<p>최종현 (j0n9hyun)<br>21살, 대구<br>포너블<br><a href="https://j0n9hyun.xyz/" target="_blank" rel="noopener">https://j0n9hyun.xyz/</a><br><a href="https://j0n9hyun.github.io/" target="_blank" rel="noopener">https://j0n9hyun.github.io/</a><br><a href="https://ctf.j0n9hyun.xyz/" target="_blank" rel="noopener">https://ctf.j0n9hyun.xyz/</a></p>
-<p>김현우 (V4bel)<br>20살, 서울<br>포너블<br><a href="https://kimvabel.tistory.com/" target="_blank" rel="noopener">https://kimvabel.tistory.com/</a></p>
-<p>이주창 (c2w2m2) - BOB 7기 취약점<br>19살<br>포너블<br><a href="http://blog.c2w2m2.com" target="_blank" rel="noopener">http://blog.c2w2m2.com</a><br><a href="https://lclang.tistory.com/" target="_blank" rel="noopener">https://lclang.tistory.com/</a></p>
-<p>김성우 (cd80) - BOB 3기 취약점<br>23살<br>포너블<br><a href="https://cd80.tistory.com/" target="_blank" rel="noopener">https://cd80.tistory.com/</a></p>
-<p>이진헌 (howdays)<br>18살<br>포너블, 웹<br>howdays.kr</p>
-<p>[리버싱]<br>권동현 (z3r0d4y5) - BOB 8기 취약점<br>22살, 강남<br>리버싱<br><a href="https://blog.naver.com/kjug1589" target="_blank" rel="noopener">https://blog.naver.com/kjug1589</a></p>
-<p>김종민 (slyfizz)<br>18살<br>리버싱<br><a href="https://slyfizz.tistory.com/" target="_blank" rel="noopener">https://slyfizz.tistory.com/</a><br>slyfizz3.github.io</p>
-<p>[웹]<br>전영신 (JYS, jeonyoungsin)<br>29살, 인천<br>웹<br><a href="http://jeonyoungsin.tistory.com" target="_blank" rel="noopener">http://jeonyoungsin.tistory.com</a></p>
-<p>정영돈 (rootable)<br>28살, 인천<br>웹<br><a href="https://rootable.tistory.com/" target="_blank" rel="noopener">https://rootable.tistory.com/</a></p>
-<p>최진열<br>27살<br>웹</p>
-<p>[포렌식]<br>이상규 (esk255)<br>27살<br>포렌식</p>
-<p>김재헌 (codeBEE) - BOB 8기 포렌식<br>25살<br>포렌식<br><a href="https://code-bee.tistory.com/" target="_blank" rel="noopener">https://code-bee.tistory.com/</a></p>
-<p>오헌태 (Retr0w4ve)<br>26살 대구<br>포렌식</p>
-<p>장윤선<br>25살<br>포렌식</p>
-<p>김규빈 (ws1004)<br>21살<br>포렌식<br>whitesnake1004.tistory.com</p>
-<p>[암호학]<br>권재승 (myria) - BOB 8기 취약점<br>24살<br>암호학, 포너블<br><a href="https://xerxes-break.tistory.com" target="_blank" rel="noopener">https://xerxes-break.tistory.com</a></p>
-<p>윤형준<br>21살 서울<br>암호학</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-      <blockquote class="mdui-m-t-5">
-        
-      </blockquote>
       
+        
+      
+      <a href="/2019/09/30/Pwn/ㄴ Research/malloc/">더 읽기 >></a>
     </div>
-    
+<!--    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Pwn/">Pwn</a><a class="mdui-ripple article_categories-link" href="/categories/Pwn/ㄴ-Research/">ㄴ Research</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/malloc/">malloc</a>
+      
+    </footer> -->
   </article>
-  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
-
-
-
 
 
 </main>
