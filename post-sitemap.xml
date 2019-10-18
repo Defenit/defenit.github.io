@@ -8,8 +8,24 @@
     </url>
 
     <url>
+        <loc>https://defenit.kr/2019/10/18/Pwn/%E3%84%B4%20WriteUps/2017_codegate_js_world/</loc>
+        <lastmod>2019-10-18T11:06:16.260Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://defenit.kr/2019/10/15/Pwn/%E3%84%B4%20Research/JSE_%EA%B8%B0%EB%B3%B8_%EA%B0%9C%EB%85%90/</loc>
         <lastmod>2019-10-15T13:29:41.449Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://defenit.kr/2019/10/03/Web/%E3%84%B4%20Research/Encoding-Web-Shells-in-PNG-IDAT-chunks/</loc>
+        <lastmod>2019-10-14T17:59:10.406Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -34,14 +50,6 @@
     <url>
         <loc>https://defenit.kr/2019/09/30/Pwn/%E3%84%B4%20Research/malloc/</loc>
         <lastmod>2019-10-04T13:32:23.490Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://defenit.kr/2019/10/03/Web/%E3%84%B4%20Research/Encoding-Web-Shells-in-PNG-IDAT-chunks/</loc>
-        <lastmod>2019-10-03T09:34:28.263Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
