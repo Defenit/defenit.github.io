@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+
+  
+  <title>커널의 기초 | Defenit 블로그</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/rss2.xml" title="Defenit 블로그">
+  <meta name="description" content="목차 커널 보호기법 리눅스 커널 모듈 - 명령어 리눅스 커널 모듈 - 함수 user mode -&amp;gt; kernel mode kernel mode -&amp;gt; user mode 기본 설정   커널 보호기법 KASLR (Kernel Address Space Layout Randomization) -&amp;gt; 커널의 메모리 주소를 랜덤화 시킨다.  SMEP (Su">
+<meta name="keywords" content="Defenit, Hacking, Securify, Exploit, Kernel, Research, Web, Reversing, CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="커널의 기초">
+<meta property="og:url" content="https://defenit.kr/2019/10/21/Pwn/ㄴ Research/커널_기초/index.html">
+<meta property="og:site_name" content="Defenit 블로그">
+<meta property="og:description" content="목차 커널 보호기법 리눅스 커널 모듈 - 명령어 리눅스 커널 모듈 - 함수 user mode -&amp;gt; kernel mode kernel mode -&amp;gt; user mode 기본 설정   커널 보호기법 KASLR (Kernel Address Space Layout Randomization) -&amp;gt; 커널의 메모리 주소를 랜덤화 시킨다.  SMEP (Su">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-21T08:26:54.333Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="커널의 기초">
+<meta name="twitter:description" content="목차 커널 보호기법 리눅스 커널 모듈 - 명령어 리눅스 커널 모듈 - 함수 user mode -&amp;gt; kernel mode kernel mode -&amp;gt; user mode 기본 설정   커널 보호기법 KASLR (Kernel Address Space Layout Randomization) -&amp;gt; 커널의 메모리 주소를 랜덤화 시킨다.  SMEP (Su">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="Team Defenit Blog">
+  <meta name="keywords" content>
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Defenit 블로그">
+  <meta name="msapplication-starturl" content="https://defenit.kr/2019/10/21/Pwn/ㄴ Research/커널_기초/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Defenit 블로그">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Mon Oct 21 2019 17:25:20 GMT+0900">
+    <meta property="article:modified_time" content="Mon Oct 21 2019 17:26:54 GMT+0900">
+  
+
+  
+    <link rel="canonical" href="https://defenit.kr/2019/10/21/Pwn/ㄴ Research/커널_기초/">
+  
+
+  <meta name="google-site-verification" content="Zw9X-H7aB3j4IjiTtdPzc5YXGbBCqAe65ysy9o2dOL8">
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">Defenit 블로그</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '검색'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/rss2.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="입력">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Defenit</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i></div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">카테고리</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense"><hr>
+	   <h3>
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/Crypto/">Crypto<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Crypto/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Forensic/">Forensic<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Forensic/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/">Pwn<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Pwn/ㄴ-WriteUps/">ㄴ WriteUps<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Rev/">Rev<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Rev/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/">Web<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/ㄴ-Research/">ㄴ Research<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Web/ㄴ-WriteUps/">ㄴ WriteUps<span class="mdui-ripple sidebar_archives-count">1</span></a></h3> <hr>
+		
+        
+      </div>
+    </div>
+    </div>
+    <a href="https://www.notion.so/j0n9hyun/4f40ecc7ba7241168f3bd41de0206e24?v=3b0cdd48c6c446098517cc8e8d0bf0fc" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">팀정보</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="https://blog.naver.com/yjw_sz/221631615816" class="mdui-list-item mdui-ripple">Apply</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://ctf.j0n9hyun.xyz/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Wargame</a>
+        
+          <a href="https://www.facebook.com/Defenit-260502217757766/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Facebook</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/cover.png" style="max-height: 340px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">커널의 기초</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-10-21 / <i class="iconfont">&#xe601;</i> JSec</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3ay27CQBAEQP7/p5NrJGTSvS8MKp8iYsyUD7urnnn8fPX1wMPDw8PDw8PDuxnvEV9X9//9/PmeyyKe/nv1SV4bHh4e3kneP0vtxT3td6PiLl5Z8Zrw8PDwDvKSRf/1wp0zku1hrDY8PDy8u/GKnwmO5jObCh4eHt5n8fJS2u0EDw8P77N47QI9/5yxezZmLXh4eHgxr22Anfz7Df09PDw8vJe89nod2iZl5eMFgxXi4eHhbea14UJe7o5vRaNaeHh4eJt5ydLfBrVJrDDWHovGEfDw8PAO8l7D8nbUqvGCJLTFw8PDO89LItSZltXYAXpLfw8PDw9vQ2+93QZmBgLybaAG4+Hh4W3mtY/LX0R7dG4HC/Dw8PDuwysC0zK2GAsy2rEDPDw8vPO8sUGovKAdcTAeHh7eSV776PaYW49MxYfpaGPAw8PD28AbOwqvbX21cXB9pMbDw8M7zmsjg7HxqTbGxcPDw3sXrx20GhsCyCOPdtirninDw8PDW8QbiyRmtookos2HEvDw8PDO84pltwQkv5IPVNWjA3h4eHgbePNhbhsftBHtxqErPDw8vGleHgqsanfNH9zx8PDwzvPyRyevIw98xxpsST14eHh4u3ntNd/yb2PZNrbAw8PD282baVwlRbRbTh5kDB6p8fDw8Bbx2s2gPTSPkdo68fDw8M7z8iGAsQ0gx89sUXh4eHh340VxwCJw2yTDw8PDuzMvj2LzMYKZcQE8PDy8d/HaptfaIYBo0Z/ZGPDw8PCW8toIYAY5s/RHoTAeHh7eZt73XXh4eHh4eHh4eDe4fgGdRapuFM8NmQAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/2019/10/21/Pwn/ㄴ Research/커널_기초/" target="_blank" class="mdui-ripple">페이스북 공유</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><ul>
+<li>커널 보호기법</li>
+<li>리눅스 커널 모듈 - 명령어</li>
+<li>리눅스 커널 모듈 - 함수</li>
+<li>user mode -&gt; kernel mode</li>
+<li>kernel mode -&gt; user mode</li>
+<li>기본 설정</li>
+</ul>
+<p><hr></p>
+<h3 id="커널-보호기법"><a href="#커널-보호기법" class="headerlink" title="커널 보호기법"></a>커널 보호기법</h3><ul>
+<li><p><code>KASLR</code> (Kernel Address Space Layout Randomization)</p>
+<p>-&gt; <strong>커널의 메모리 주소를 랜덤화</strong> 시킨다.</p>
+</li>
+<li><p><code>SMEP</code> (Supervisor Mode Execution Protection)</p>
+<p>-&gt; <strong>유저 영역의 주소 공간에서 커널의 코드를 실행을 방지</strong>한다.</p>
+</li>
+<li><p><code>SMAP</code> (Supervisor Mode Access Protection)</p>
+<p>-&gt; <strong>유저 영역의 주소 공간에서 메모리 접근을 비허용</strong>한다.</p>
+</li>
+<li><p><code>KADR</code> (Kernel Address Display Restriction)</p>
+<p>-&gt; <strong>비 루트 사용자가 커널 주소의 정보를 얻는 것을 제한</strong>한다.</p>
+<p>-&gt; 모든 커널 심볼이 저장된 <code>/proc/kallsyms</code>파일의 심볼 주소가 0으로 표시된다.</p>
+</li>
+<li><p><code>KPRI</code> (Kernel Page Table Isolation)</p>
+<p>-&gt; <strong>유저 공간에서 커널 공간의 데이터 획득을 막기 위해 page를 따로 사용하는 것</strong></p>
+</li>
+<li><p><code>canary</code></p>
+<p>-&gt; <strong>모듈에 카나리가 있을 경우 BOF를 방지</strong>한다.</p>
+</li>
+</ul>
+<p><hr></p>
+<h3 id="리눅스-커널-모듈-명령어"><a href="#리눅스-커널-모듈-명령어" class="headerlink" title="리눅스 커널 모듈 - 명령어"></a>리눅스 커널 모듈 - 명령어</h3><ul>
+<li><p><code>lsmod</code></p>
+<p>-&gt; <strong>실행중인 모듈 리스트</strong>를 확인할 때 사용</p>
+</li>
+<li><p><code>insmod</code> [모듈 명]</p>
+<p>-&gt; <strong>커널에 모듈 삽입</strong>할 때 사용</p>
+</li>
+<li><p><code>modinfo</code> [모듈 명]</p>
+<p>-&gt; <strong>모듈 정보</strong>를 볼 때 사용</p>
+</li>
+<li><p><code>rmmood</code> [모듈 명]</p>
+<p>-&gt; <strong>모듈을 삭제</strong>할 때 사용</p>
+</li>
+</ul>
+<p><hr></p>
+<h3 id="리눅스-커널-모듈-함수"><a href="#리눅스-커널-모듈-함수" class="headerlink" title="리눅스 커널 모듈 - 함수"></a>리눅스 커널 모듈 - 함수</h3><ul>
+<li><p><code>module_init</code></p>
+<p>-&gt; <strong>모듈을 적재할 때 실행</strong>하는 함수</p>
+<p>-&gt; 성공하면 0을 반환</p>
+</li>
+<li><p><code>module_exit</code></p>
+<p>-&gt; <strong>모듈을 삭제할 때 실행</strong>되는 함수</p>
+</li>
+<li><p><code>printk</code></p>
+<p>-&gt; <code>printf</code>와 비슷한 함수</p>
+<p>-&gt; printf는 <code>stdout</code>에 출력하지만, printk는 <code>kernel ring buffer</code>에 값을 출력</p>
+<p>-&gt; <code>dmesg</code> 명령이나 <code>/var/log/messages</code> 또는 <code>/var/log/kern.log</code> 파일에서 확인 가능</p>
+</li>
+<li><p><code>kmalloc</code></p>
+<p>-&gt; <code>malloc</code>과 비슷한 함수</p>
+<p>-&gt; kmalloc는 <code>ptmalloc2</code>가 아닌 <code>slab allocator</code>를 통해 메모리를 할당</p>
+</li>
+<li><p>kfree</p>
+<p>-&gt; <code>free</code>와 비슷한 함수</p>
+<p>-&gt; kfree는 <code>ptmalloc2</code>가 아닌 <code>slab allocator</code>를 통해 메모리를 해제</p>
+</li>
+<li><p><code>copy_from_user</code></p>
+<p>-&gt; <code>memcpy</code>와 비슷한 함수</p>
+<p>-&gt; <strong>유저 영역에서 커널 영역으로 특정 바이트 만큼 복사</strong></p>
+<p>-&gt; <strong>정상적으로 수행했으면 0을 반환</strong>한다. (아니라면 복사되지 않은 바이트 수)</p>
+</li>
+<li><p><code>copy_to_user</code></p>
+<p>-&gt; <code>memcpy</code>와 비슷한 함수</p>
+<p>-&gt; <strong>커널 영역에서 유저 영역으로 특정 바이트 만큼 복사</strong></p>
+<p>-&gt; <strong>정상적으로 수행했으면 0을 반환</strong>한다. (아니라면 복사되지 않은 바이트 수)</p>
+</li>
+<li><p><code>prepare_kernel_cred</code></p>
+<p>-&gt; <strong>새로운 cred 구조체를 생성</strong>하는 함수</p>
+<p>-&gt; <strong>인자를 0으로 주면 내부 동작에 의해 uid, gid가 0으로 설정된 cred가 생성</strong> 된다. (root 권한)</p>
+<blockquote>
+<h4 id="cred-구조체"><a href="#cred-구조체" class="headerlink" title="cred 구조체"></a>cred 구조체</h4><p>커널은 현재 프로세스의 권한 정보를 cred라는 구조체에 저장하는데, uid, gid 등 여러가지 정보를 담고 있음</p>
+</blockquote>
+</li>
+<li><p><code>commit_creds</code></p>
+<p>-&gt; 인자로 cred 구조체를 넘겨주면 새로운 권한을 적용한다.</p>
+</li>
+</ul>
+<p><hr></p>
+<h3 id="user-mode-gt-kernel-mode"><a href="#user-mode-gt-kernel-mode" class="headerlink" title="user mode -&gt; kernel mode"></a>user mode -&gt; kernel mode</h3><ol>
+<li><strong><code>swapgs</code> 인스트럭션을 통해 <code>GS</code> 레지스터와 <code>MSR</code> 레지스터의 <code>KERNEL_GS_BASE</code> 값을 교환</strong>한다.</li>
+<li><strong>user mode의 레지스터들을 백업하기 위해 스택에 push</strong>한다.</li>
+<li>커널 전역변수 <code>sys_call_table</code>에 접근해 syscall을 처리한다.</li>
+</ol>
+<p><hr></p>
+<h3 id="kernel-mode-gt-user-mode"><a href="#kernel-mode-gt-user-mode" class="headerlink" title="kernel mode -&gt; user mode"></a>kernel mode -&gt; user mode</h3><ol>
+<li><code>swapgs</code>로 <code>GS</code> 레지스터를 복구한다.</li>
+<li><code>sysretq</code> / <code>iretq</code>로 유저 영역에 복귀한다.</li>
+</ol>
+<p><hr></p>
+<h3 id="기본-설정"><a href="#기본-설정" class="headerlink" title="기본 설정"></a>기본 설정</h3><p>기본적으로 CTF Kernel 문제에서 제공되는 파일은 다음과 같다. (보통 bzImage, cpio, sh 파일이 주어짐)</p>
+<ul>
+<li><p><code>bzImage</code></p>
+<p>-&gt; <strong>압축된 커널 이미지로 부팅시 사용</strong>한다.</p>
+<p>-&gt; <strong>해당 파일을 이용해서 vmlinux 파일을 추출</strong> 가능하다.</p>
+</li>
+<li><p><code>cpio</code></p>
+<p>-&gt; <strong>file system을 압축시켜놓은 파일</strong>이다.</p>
+<p>-&gt; <code>file</code> 명령을 이용해서 압축 파일인 지 확인하고 <strong>압축 파일이라면 먼저 해제</strong>하면 된다.</p>
+<p>-&gt; <strong>cpio 파일에서 ko 파일을 얻을 수 있다.</strong></p>
+</li>
+<li><p><code>sh</code></p>
+<p>-&gt; <strong>qemu의 실행 옵션이 들어있는 셸 스크립트 파일</strong>이다.</p>
+</li>
+<li><p><code>ko</code></p>
+<p>-&gt; <strong>모듈 파일로서 IDA를 이용해서 분석</strong>해야 하는 파일이다.</p>
+</li>
+<li><p><code>vmlinux</code></p>
+<p>-&gt; <strong>커널 컴파일 시 생성되는 이미지 파일</strong>이다.</p>
+</li>
+</ul>
+<h4 id="vmlinux-파일-추출하기"><a href="#vmlinux-파일-추출하기" class="headerlink" title="vmlinux 파일 추출하기"></a>vmlinux 파일 추출하기</h4><ul>
+<li><p><strong>설정</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install linux-headers-$(uname -r)</span><br><span class="line">sudo ln -s /usr/src/linux-headers-$(uname -r)/scripts/extract-vmlinux /usr/bin/extract-vmlinux</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>추출</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extract-vmlinux bzImage &gt; vmlinux</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="cpio-압축-해제"><a href="#cpio-압축-해제" class="headerlink" title="cpio 압축 해제"></a>cpio 압축 해제</h4><ul>
+<li><p>보통 <code>gzip</code>으로 압축되어 있는 경우가 많은데, 이땐 다음과 같은 명령으로 해제하면 된다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv *.cpio *.cpio.gz</span><br><span class="line">gzip -d *.cpio.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>그 이후 다음 명령어를 이용해 압축을 해제한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpio -idm &lt; *.cpio</span><br></pre></td></tr></table></figure>
+<p>​    -&gt; i: 압축 해제</p>
+<p>​    -&gt; d: 없는 디렉토리 생성</p>
+<p>​    -&gt; m: 변경시간 유지</p>
+</li>
+<li><p><strong>ko 파일은 압축해제해서 나온 file system의 루트 디렉토리 또는 lib 디렉토리 내부에 존재</strong>한다.</p>
+</li>
+</ul>
+<h4 id="sh-파일-수정"><a href="#sh-파일-수정" class="headerlink" title="sh 파일 수정"></a>sh 파일 수정</h4><ul>
+<li><p>-m 옵션이 64M일 경우 256M으로 변경 (64는 부족함)</p>
+</li>
+<li><p>-s 옵션이 없을 경우 추가</p>
+<p>-&gt; <strong>1234번 포트로 연결을 기다리는 옵션</strong></p>
+<p>-&gt; p 옵션으로 원하는 포트 지정도 가능</p>
+</li>
+</ul>
+<h4 id="부팅"><a href="#부팅" class="headerlink" title="부팅"></a>부팅</h4><ul>
+<li><p><code>qemu</code>가 설치 안되었다면 설치한다.</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install qemu</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sh 파일에 <code>enable kvm</code>이 있다면 다음 설정을 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmware에서 Settings -&gt; Processors -&gt; Virtualize Intel VT-x/EPT or AMD-V/RVI 체크 (가상 머신이 종료된 상황에서)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>설정이 끝났다면 sh파일을 실행한다.</p>
+</li>
+</ul>
+<p><hr></p>
+<h3 id="레퍼런스"><a href="#레퍼런스" class="headerlink" title="레퍼런스"></a>레퍼런스</h3><ul>
+<li><a href="https://st4nw.github.io/2019-09-02/kadr/" target="_blank" rel="noopener">https://st4nw.github.io/2019-09-02/kadr/</a></li>
+<li><a href="https://sunrinjuntae.tistory.com/124?category=732710" target="_blank" rel="noopener">https://sunrinjuntae.tistory.com/124?category=732710</a></li>
+<li><a href="https://sunrinjuntae.tistory.com/125?category=732710" target="_blank" rel="noopener">https://sunrinjuntae.tistory.com/125?category=732710</a></li>
+<li><a href="https://st4nw.github.io/2019-09-08/kernel3/" target="_blank" rel="noopener">https://st4nw.github.io/2019-09-08/kernel3/</a></li>
+<li><a href="https://st4nw.github.io/2019-09-08/kernel2/" target="_blank" rel="noopener">https://st4nw.github.io/2019-09-08/kernel2/</a></li>
+<li><a href="https://applemasterz17.tistory.com/230" target="_blank" rel="noopener">https://applemasterz17.tistory.com/230</a></li>
+<li><a href="https://defenit.kr/2019/10/18/Pwn/ㄴ WriteUps/CISCN-2017-babydriver-Write-Up-linux-kernel-UAF/">https://defenit.kr/2019/10/18/Pwn/%E3%84%B4%20WriteUps/CISCN-2017-babydriver-Write-Up-linux-kernel-UAF/</a></li>
+<li><p><a href="https://rajalo.tistory.com/entry/cpio-옵션" target="_blank" rel="noopener">https://rajalo.tistory.com/entry/cpio-%EC%98%B5%EC%85%98</a></p>
+</li>
+<li><p><a href="https://m.blog.naver.com/PostView.nhn?blogId=kjug1589&amp;logNo=221598098507&amp;categoryNo=0&amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F" target="_blank" rel="noopener">https://m.blog.naver.com/PostView.nhn?blogId=kjug1589&amp;logNo=221598098507&amp;categoryNo=0&amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F</a></p>
+</li>
+</ul>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+      <blockquote class="mdui-m-t-5">
+        
+      </blockquote>
+      
+    </div>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/10/18/Pwn/ㄴ WriteUps/CISCN-2017-babydriver-Write-Up-linux-kernel-UAF/">
+        이전 글&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2019 Defenit<br>
+    
+  </div>
+</footer>
+
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
