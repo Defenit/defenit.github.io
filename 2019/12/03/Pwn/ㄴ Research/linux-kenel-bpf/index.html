@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="Defenit 블로그">
 <meta property="og:description" content="목차 서론 BPF 모듈 주요 데이터 구조 integer overflow heap overflow 작은 힙 할당 heap overflow trigger victim structure   exploit 취약점 체이닝 debugging   reference    서론ww9210이 2018/11/22에 bpf 모듈에서 integer overflow로 heap ov">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-04T01:40:08.584Z">
+<meta property="og:updated_time" content="2019-12-04T14:06:49.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[1-day Analysis] Linux kernel BPF integer overflow &amp; heap overflow">
 <meta name="twitter:description" content="목차 서론 BPF 모듈 주요 데이터 구조 integer overflow heap overflow 작은 힙 할당 heap overflow trigger victim structure   exploit 취약점 체이닝 debugging   reference    서론ww9210이 2018/11/22에 bpf 모듈에서 integer overflow로 heap ov">
@@ -42,7 +42,7 @@
 
   
     <meta property="article:published_time" content="Tue Dec 03 2019 18:52:29 GMT+0900">
-    <meta property="article:modified_time" content="Wed Dec 04 2019 10:40:08 GMT+0900">
+    <meta property="article:modified_time" content="Wed Dec 04 2019 23:06:49 GMT+0900">
   
 
   
@@ -267,7 +267,7 @@
 <li><code>rop_chain</code>을 stack_pivot_gadget의 앞 4바이트 기준으로 <code>mmap()</code>을 이용해 배치합니다.</li>
 <li>bpf 맵을 integer overflow를 이용해 256byte 크기로 할당해줍니다. (fd = 3)</li>
 <li>힙풍수를 맞추기 위해 256byte의 bpf 맵을 14번 할당해줍니다.  (fd = 4 ~ 17)</li>
-<li>처음 할당한 bpf 맵에서 heap overflow를 이용해 다음 bpf 맵의 <code>map-&gt;ops</code> 멤버를 fakestack으로 덮습니다.</li>
+<li>처음 할당한 bpf 맵에서 heap overflow를 이용해 물리적으로 인접한 다음 bpf 맵의 <code>map-&gt;ops</code> 멤버를 fakestack으로 덮습니다.</li>
 <li>처음 할당한 bpf 맵을 <code>close()</code>할 경우 <code>fakestack-&gt;stack_pivot_gadget</code>이 호출되며 <code>stack pivoting</code>이 일어납니다.</li>
 <li><code>stack pivoting</code>과 다른 가젯들로 인해 <code>rop_chain</code>이 실행되고, root 권한을 획득하게 됩니다.</li>
 <li>세그먼트 오류로 SIGSEGV 에러가 날 경우, <code>get_shell_again()</code>을 실행해 쉘을 불러옵니다.</li>
