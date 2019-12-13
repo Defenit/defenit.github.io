@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="Defenit 블로그">
 <meta property="og:description" content="목차 서론 BPF 모듈 주요 데이터 구조 integer overflow heap overflow 작은 힙 할당 heap overflow trigger victim structure   exploit 취약점 체이닝 debugging   reference    서론ww9210이 2018/11/22에 bpf 모듈에서 integer overflow로 heap ov">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-06T16:00:46.001Z">
+<meta property="og:updated_time" content="2019-12-13T07:26:19.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[1-day Analysis] Linux kernel BPF integer overflow &amp; heap overflow">
 <meta name="twitter:description" content="목차 서론 BPF 모듈 주요 데이터 구조 integer overflow heap overflow 작은 힙 할당 heap overflow trigger victim structure   exploit 취약점 체이닝 debugging   reference    서론ww9210이 2018/11/22에 bpf 모듈에서 integer overflow로 heap ov">
@@ -42,7 +42,7 @@
 
   
     <meta property="article:published_time" content="Tue Dec 03 2019 18:52:29 GMT+0900">
-    <meta property="article:modified_time" content="Sat Dec 07 2019 01:00:46 GMT+0900">
+    <meta property="article:modified_time" content="Fri Dec 13 2019 16:26:19 GMT+0900">
   
 
   
@@ -280,6 +280,8 @@
 <p>heap overflow가 일어나기 전의 데이터 상황입니다. 첫 번째(fd 3) 맵과 인접하게 할당된 fd 7 맵의 첫 번째 멤버가 <code>0xffffffff82029ba0</code> 인 것을 확인할 수 있습니다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; x/100gx 0xffff88807f510300</span><br><span class="line">0xffff88807f510300:	0xffff88807f510500	0x0000000000000000     // fd = 3</span><br><span class="line">0xffff88807f510310:	0x0000000000000000	0x0000000000000017</span><br><span class="line">0xffff88807f510320:	0xffffffff00000040	0x0000000100000000</span><br><span class="line">0xffff88807f510330:	0xffffffff00000000	0x0000000000000000</span><br><span class="line">0xffff88807f510340:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f510350:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f510360:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f510370:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f510380:	0xffff88807fad8b00	0x0000000000000000</span><br><span class="line">0xffff88807f510390:	0x0000000000000000	0xffff88807f510398</span><br><span class="line">0xffff88807f5103a0:	0xffff88807f510398	0xffffffff8119ac50</span><br><span class="line">0xffff88807f5103b0:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f5103c0:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f5103d0:	0x0000000000000001	0x0000000000000002</span><br><span class="line">0xffff88807f5103e0:	0x0000000000000003	0x0000000000000004</span><br><span class="line">0xffff88807f5103f0:	0x0000000000000005	0x0000000000000006</span><br><span class="line">0xffff88807f510400:	0x000000a000000000	0x0000000000000008     // fd = 7</span><br><span class="line">0xffff88807f510410:	0xffff888079b06f68	0x0000000000000017</span><br><span class="line">0xffff88807f510420:	0xffffffff00000040	0x0000000100000000</span><br><span class="line">0xffff88807f510430:	0xffffffff00000014	0x0000000000000000</span><br><span class="line">0xffff88807f510440:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f510450:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f510460:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0xffff88807f510470:	0x0000000000000000	0x0000000000000000</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
 <p>heap overflow가 일어난 후의 데이터 상황입니다. fd 7 맵의 첫 번째 멤버가 <code>fakestack</code> 주소인 <code>0x000000a000000000</code> 으로 덮인 것을 확인할 수 있습니다.</p>
+<hr>
+
 <h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ul>
 <li><a href="https://www.mail-archive.com/netdev@vger.kernel.org/msg256054.html" target="_blank" rel="noopener">https://www.mail-archive.com/netdev@vger.kernel.org/msg256054.html</a></li>
 <li><a href="https://github.com/ww9210/kernel4.20_bpf_LPE/blob/master/exp.c" target="_blank" rel="noopener">https://github.com/ww9210/kernel4.20_bpf_LPE/blob/master/exp.c</a></li>
