@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://defenit.kr/2019/12/28/Pwn/%E3%84%B4%20Research/1-day-Analysis-Chrome-Browser-Exploit-with-CVE-2019-5791-RCE/</loc>
+        <lastmod>2019-12-28T13:37:18.258Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://defenit.kr/2019/12/03/Pwn/%E3%84%B4%20Research/linux-kenel-bpf/</loc>
         <lastmod>2019-12-13T07:26:19.392Z</lastmod>
         <changefreq>weekly</changefreq>
