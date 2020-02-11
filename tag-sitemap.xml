@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://defenit.kr/tags/CSP/</loc>
+        <lastmod>2020-02-11T02:04:51.215Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://defenit.kr/tags/XSS/</loc>
         <lastmod>2019-12-12T01:22:27.835Z</lastmod>
         <changefreq>weekly</changefreq>
