@@ -17,7 +17,7 @@
 <meta name="keywords" content="Defenit, Hacking, Securify, Exploit, Kernel, Research, Web, Reversing, CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP assert 함수에 대한 고찰">
-<meta property="og:url" content="https://defenit.kr/2020/08/28/PHP-assert-함수에-대한-고찰/index.html">
+<meta property="og:url" content="https://defenit.kr/2020/08/28/Web/ㄴ Research/PHP-assert-함수에-대한-고찰/index.html">
 <meta property="og:site_name" content="Defenit 블로그">
 <meta property="og:description" content="code execution 이 가능한 상황에서 assert 는 다중 함수를 실행하는데 있어 편리한 함수 중 하나였습니다. 그런데 PHP 7 버전 부터는 assert 함수가 간혹 예상 했던 대로 동작 하지 않는 경우가 많았습니다. 정확한 원인을 파악하고자 분석을 해보았습니다.   예를 들어, assert(&amp;quot;phpinfo()&amp;quot;); 는 분석 환">
 <meta property="og:locale" content="en">
@@ -38,7 +38,7 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Defenit 블로그">
-  <meta name="msapplication-starturl" content="https://defenit.kr/2020/08/28/PHP-assert-함수에-대한-고찰/">
+  <meta name="msapplication-starturl" content="https://defenit.kr/2020/08/28/Web/ㄴ Research/PHP-assert-함수에-대한-고찰/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Defenit 블로그">
@@ -51,7 +51,7 @@
   
 
   
-    <link rel="canonical" href="https://defenit.kr/2020/08/28/PHP-assert-함수에-대한-고찰/">
+    <link rel="canonical" href="https://defenit.kr/2020/08/28/Web/ㄴ Research/PHP-assert-함수에-대한-고찰/">
   
 
   <meta name="google-site-verification" content="Zw9X-H7aB3j4IjiTtdPzc5YXGbBCqAe65ysy9o2dOL8">
@@ -116,7 +116,7 @@
       </div>
     </div>
     </div>
-    <a href="https://www.notion.so/j0n9hyun/4f40ecc7ba7241168f3bd41de0206e24?v=3b0cdd48c6c446098517cc8e8d0bf0fc" class="mdui-list-item mdui-ripple" target="_blank">
+    <a href="https://defenit.kr" class="mdui-list-item mdui-ripple" target="_blank">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
       <div class="mdui-list-item-content">팀정보</div>
     </a>
@@ -166,7 +166,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0klEQVR42u3aW26EMAwF0Nn/ptsFVDDXNlSQHL6qKYScjFTXj8/PltcHGxsbGxsbGxsb+5HsT3z9fep8haO3HD11dGf+xi97wMbGxl6a/eVP/4BxvtrRnUfrj/aMjY2NvQH7PKjk9+RHdh6o8iNI9oONjY2NfZ4q3BF+kqPExsbGxu6x8zQjLxhNkhlsbGxs7LxAM9l6NV1JfvtPtTRsbGzsx7Pzpulzfv7X/jY2Njb2g9nVKwkt1RJSjhztHBsbG3tRdh4YJs3aXhDKW8VRKQobGxt7UXYeeKppySTwTNrJh4eOjY2NvSh7Ptp4Rxt4vp9CLQ0bGxv75ex863mImhxEkvA0ExhsbGzsjdn50oUBmuLQT/L5xQEMGxsbeyH2pAyUf54nPL19YmNjY6/K/lJSz8NDvEIexvKDi1IpbGxs7A3YvfJ9L7XI39Ibyix0RbCxsbFfzs4TjDyQ5ClENXWZJFHY2NjYq7KrWyz86x+Dq8WjPC3BxsbG3oddBffGeqppTA67YOYUGxsb+7XswmPjAFY9jnlxChsbG3sfdrWoVGVfdf9oABQbGxt7UXaVcdkm4hZyVPoP3ouNjY29KjshJQGsVyrqtSjyw8LGxsbegZ0MOFYbCef352lPL+A1uyLY2NjYL2f3QsUkpPXWHDWDsbGxsbdhT8ZxkkDSO4hJQQobGxt7T/Z81HLehLi4yIWNjY29Gbs6dlMd0JkHpxtTEWxsbOwl2JNCf1Ssbx1HNYxhY2Nj78DuMaplo15qkadD5VQEGxsbeyH2/JVJw6AwWFNMhAppDzY2NvbS7KuCVtIeaBb37whg2NjY2Muxk/DTa9kmIarXfi58JdjY2NjYNzeDewlM4e3Y2NjY2MG//klBqoq/qmmBjY2NvQM7H6BJNnrVU/nX0Axg2NjY2Euwq4Wb5GiqKySr5QkPNjY29j7sfS5sbGxsbGxsbGzsx1y/SN4qXOanowQAAAAASUVORK5CYII=">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC00lEQVR42u3aUXIaQQwEUO5/6eQACbhbIjGeefvl8i4wb6iyrNY8fl15PbCxsbGxsbGxsbE/kv2Ir7+80R939z8/+8TXTyZrxsbGxj6b/cWf/peLeP2qfGs2r4rWjI2NjX0Be/ORrwtPy27f4fUz2NjY2NizNiBfUL6J2NjY2NjvLWB5+cmL3GswNjY2NvY+VIqC+DyyL8cP35alYWNjY388e9ZIfO/P/3W+jY2Njf3B7PaaHeLJh7uz5iRaOTY2Nvah7LwwbIavs5YjP9YTRVHY2NjY17DfGyfld/Nn2qEFNjY29tnsltcu+l/EVcNNx8bGxj6UnY9R86VvgqSEkRdCbGxs7BvY+RGZNtxpD+hsBs+rQS82Njb2D2e3ZaMFzxqJNvBaDXqxsbGxD2K3gfsskEoanrYVSWIvbGxs7BvY+9/nd9vSmA+bh3UbGxsb+zh2Eiflr9pv7mY8jI2NjX02e1YYkrLRHvd5V4F8+gw2Njb20eykbCQB0DC4Hw0YkigKGxsb+2b2JtCZRfztBiVfGDY2Njb2bGT7rs2afRnReAAbGxv7UHYexBdRThAtJVvTHhvCxsbGvofdRjltGWsD/bzNeMPhS2xsbOyD2HkxmBWqvEQld5OACRsbG/se9n4QOysqLb5tV7CxsbHvYeeRfR7l5+PbTWNTB0/Y2NjYR7PbgzL7g5J5CWxHxcMODBsbG/sI9v7f/c3hm1k5TL42bGxs7NvYs6IyK4Gz9ma2HdjY2Ninsmejgn1U9BhdyYZGBQwbGxv7IPbsI9umYtOKbLYSGxsb+x52W5C+GKmWB3ry4UE7usDGxsa+jZ2Pb9uFJkczk0AqP+KJjY2Njd0OaNuIZxZaJeUKGxsbGztn16PWRfnZN0vY2NjYN7A3IVH+qtlQIW+Nnr4PNjY29tHsNrjJR7Nt0F9jNq0INjY29hHsey5sbGxsbGxsbGzsj7l+A6Ule+5BQsRHAAAAAElFTkSuQmCC">
               
             </li>
           </ul>
@@ -175,7 +175,7 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/2020/08/28/PHP-assert-함수에-대한-고찰/" target="_blank" class="mdui-ripple">페이스북 공유</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://defenit.kr/2020/08/28/Web/ㄴ Research/PHP-assert-함수에-대한-고찰/" target="_blank" class="mdui-ripple">페이스북 공유</a>
             </li>
           </ul>
         
